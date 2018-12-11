@@ -1,0 +1,29 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/knightWALKleft (1).png-b9f4b9c5afd95a131830f328446b037b.stex"
+
+[deps]
+
+source_file="res://PlayerAnim/walkLeft/knightWALKleft (1).png"
+dest_files=[ "res://.import/knightWALKleft (1).png-b9f4b9c5afd95a131830f328446b037b.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
