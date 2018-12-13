@@ -4,3 +4,9 @@ C:\GN3\.mono\temp\obj\Tools\GN3.csprojAssemblyReference.cache
 C:\GN3\.mono\temp\obj\Tools\GN3.csproj.CoreCompileInputs.cache
 C:\GN3\.mono\temp\obj\Tools\GN3.dll
 C:\GN3\.mono\temp\obj\Tools\GN3.pdb
+C:\GN3\project.ONE\.mono\temp\bin\Tools\GN3.dll
+C:\GN3\project.ONE\.mono\temp\bin\Tools\GN3.pdb
+C:\GN3\project.ONE\.mono\temp\obj\Tools\GN3.csprojAssemblyReference.cache
+C:\GN3\project.ONE\.mono\temp\obj\Tools\GN3.csproj.CoreCompileInputs.cache
+C:\GN3\project.ONE\.mono\temp\obj\Tools\GN3.dll
+C:\GN3\project.ONE\.mono\temp\obj\Tools\GN3.pdb

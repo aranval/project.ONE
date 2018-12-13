@@ -11,9 +11,17 @@ config_version=3
 [application]
 
 config/name="GN3"
-run/main_scene="res://World.tscn"
+run/main_scene="res://World2.tscn"
 config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "vnen.tiled_importer" )
 
 [rendering]
 
 environment/default_environment="res://default_env.tres"
+
+[tiled_importer]
+
+enable_json_format=true

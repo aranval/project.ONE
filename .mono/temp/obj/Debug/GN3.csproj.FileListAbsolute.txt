@@ -1,0 +1,6 @@
+C:\GN3\project.ONE\.mono\temp\bin\Debug\GN3.dll
+C:\GN3\project.ONE\.mono\temp\bin\Debug\GN3.pdb
+C:\GN3\project.ONE\.mono\temp\obj\Debug\GN3.csprojAssemblyReference.cache
+C:\GN3\project.ONE\.mono\temp\obj\Debug\GN3.csproj.CoreCompileInputs.cache
+C:\GN3\project.ONE\.mono\temp\obj\Debug\GN3.dll
+C:\GN3\project.ONE\.mono\temp\obj\Debug\GN3.pdb
