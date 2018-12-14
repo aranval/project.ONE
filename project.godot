@@ -14,12 +14,22 @@ config/name="GN3"
 run/main_scene="res://World2.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=325
+window/size/height=200
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+window/stretch/shrink="1"
+
 [editor_plugins]
 
 enabled=PoolStringArray( "vnen.tiled_importer" )
 
 [rendering]
 
+quality/2d/use_pixel_snap=true
+environment/default_clear_color=Color( 0.113725, 0.129412, 0.176471, 1 )
 environment/default_environment="res://default_env.tres"
 
 [tiled_importer]
