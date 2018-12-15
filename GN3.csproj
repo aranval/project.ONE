@@ -49,6 +49,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PlayerMain.cs" />
     <Compile Include="PlayerSpriteMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

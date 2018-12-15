@@ -249,37 +249,37 @@
 [ext_resource path="res://industrial tileset/tile360.png" type="Texture" id=247]
 [ext_resource path="res://industrial tileset/tile361.png" type="Texture" id=248]
 [ext_resource path="res://PlayerSpriteMain.cs" type="Script" id=249]
-[ext_resource path="res://industrial tileset/rotate/tile512.png" type="Texture" id=250]
-[ext_resource path="res://industrial tileset/rotate/tile513.png" type="Texture" id=251]
-[ext_resource path="res://industrial tileset/rotate/tile514.png" type="Texture" id=252]
-[ext_resource path="res://industrial tileset/tile544.png" type="Texture" id=253]
-[ext_resource path="res://industrial tileset/tile545.png" type="Texture" id=254]
-[ext_resource path="res://industrial tileset/tile546.png" type="Texture" id=255]
-[ext_resource path="res://industrial tileset/tile547.png" type="Texture" id=256]
-[ext_resource path="res://industrial tileset/tile548.png" type="Texture" id=257]
-[ext_resource path="res://industrial tileset/tile549.png" type="Texture" id=258]
-[ext_resource path="res://industrial tileset/tile550.png" type="Texture" id=259]
-[ext_resource path="res://industrial tileset/tile551.png" type="Texture" id=260]
-[ext_resource path="res://industrial tileset/tile512.png" type="Texture" id=261]
-[ext_resource path="res://industrial tileset/tile513.png" type="Texture" id=262]
-[ext_resource path="res://industrial tileset/tile514.png" type="Texture" id=263]
-[ext_resource path="res://industrial tileset/rotate/tile544.png" type="Texture" id=264]
-[ext_resource path="res://industrial tileset/rotate/tile545.png" type="Texture" id=265]
-[ext_resource path="res://industrial tileset/rotate/tile546.png" type="Texture" id=266]
-[ext_resource path="res://industrial tileset/rotate/tile547.png" type="Texture" id=267]
-[ext_resource path="res://industrial tileset/rotate/tile548.png" type="Texture" id=268]
-[ext_resource path="res://industrial tileset/rotate/tile549.png" type="Texture" id=269]
-[ext_resource path="res://industrial tileset/rotate/tile550.png" type="Texture" id=270]
-[ext_resource path="res://industrial tileset/rotate/tile551.png" type="Texture" id=271]
+[ext_resource path="res://industrial tileset/rotate/tile544.png" type="Texture" id=250]
+[ext_resource path="res://industrial tileset/rotate/tile545.png" type="Texture" id=251]
+[ext_resource path="res://industrial tileset/rotate/tile546.png" type="Texture" id=252]
+[ext_resource path="res://industrial tileset/rotate/tile547.png" type="Texture" id=253]
+[ext_resource path="res://industrial tileset/rotate/tile548.png" type="Texture" id=254]
+[ext_resource path="res://industrial tileset/rotate/tile549.png" type="Texture" id=255]
+[ext_resource path="res://industrial tileset/rotate/tile550.png" type="Texture" id=256]
+[ext_resource path="res://industrial tileset/rotate/tile551.png" type="Texture" id=257]
+[ext_resource path="res://industrial tileset/tile544.png" type="Texture" id=258]
+[ext_resource path="res://industrial tileset/tile545.png" type="Texture" id=259]
+[ext_resource path="res://industrial tileset/tile546.png" type="Texture" id=260]
+[ext_resource path="res://industrial tileset/tile547.png" type="Texture" id=261]
+[ext_resource path="res://industrial tileset/tile548.png" type="Texture" id=262]
+[ext_resource path="res://industrial tileset/tile549.png" type="Texture" id=263]
+[ext_resource path="res://industrial tileset/tile550.png" type="Texture" id=264]
+[ext_resource path="res://industrial tileset/tile551.png" type="Texture" id=265]
+[ext_resource path="res://industrial tileset/rotate/tile512.png" type="Texture" id=266]
+[ext_resource path="res://industrial tileset/rotate/tile513.png" type="Texture" id=267]
+[ext_resource path="res://industrial tileset/rotate/tile514.png" type="Texture" id=268]
+[ext_resource path="res://industrial tileset/tile512.png" type="Texture" id=269]
+[ext_resource path="res://industrial tileset/tile513.png" type="Texture" id=270]
+[ext_resource path="res://industrial tileset/tile514.png" type="Texture" id=271]
 [ext_resource path="res://industrial tileset/tile112.png" type="Texture" id=272]
 [ext_resource path="res://industrial tileset/tile113.png" type="Texture" id=273]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 3.47368 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 6.25 )
@@ -289,66 +289,66 @@ extents = Vector2( 10, 6.25 )
 custom_solver_bias = 0.0
 extents = Vector2( 7.90123, 5.2381 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 7.2973 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 11.1111, 10 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 13, 10 )
 
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
 [sub_resource type="RectangleShape2D" id=9]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
-[sub_resource type="RectangleShape2D" id=10]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
-[sub_resource type="RectangleShape2D" id=11]
 
 custom_solver_bias = 0.0
 extents = Vector2( 6.62526, 10 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=10]
 
 animations = [ {
-"frames": [ ExtResource( 250 ), ExtResource( 251 ), ExtResource( 252 ) ],
+"frames": [ ExtResource( 250 ), ExtResource( 251 ), ExtResource( 252 ), ExtResource( 253 ), ExtResource( 254 ), ExtResource( 255 ), ExtResource( 256 ), ExtResource( 257 ) ],
 "loop": true,
-"name": "idleLeft",
-"speed": 4.0
+"name": "walkLeft",
+"speed": 8.0
 }, {
-"frames": [ ExtResource( 253 ), ExtResource( 254 ), ExtResource( 255 ), ExtResource( 256 ), ExtResource( 257 ), ExtResource( 258 ), ExtResource( 259 ), ExtResource( 260 ) ],
+"frames": [ ExtResource( 258 ), ExtResource( 259 ), ExtResource( 260 ), ExtResource( 261 ), ExtResource( 262 ), ExtResource( 263 ), ExtResource( 264 ), ExtResource( 265 ) ],
 "loop": true,
 "name": "walkRight",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 261 ), ExtResource( 262 ), ExtResource( 263 ) ],
+"frames": [ ExtResource( 266 ), ExtResource( 267 ), ExtResource( 268 ) ],
+"loop": true,
+"name": "idleLeft",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 269 ), ExtResource( 270 ), ExtResource( 271 ) ],
 "loop": true,
 "name": "idleRight",
 "speed": 4.0
-}, {
-"frames": [ ExtResource( 264 ), ExtResource( 265 ), ExtResource( 266 ), ExtResource( 267 ), ExtResource( 268 ), ExtResource( 269 ), ExtResource( 270 ), ExtResource( 271 ) ],
-"loop": true,
-"name": "walkLeft",
-"speed": 8.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=11]
 
 custom_solver_bias = 0.0
 extents = Vector2( 3, 1.5 )
 
-[node name="World" type="Node" index="0"]
+[node name="World" type="Node"]
 
 [node name="monte-1" type="Sprite" parent="." index="0"]
 
@@ -588,7 +588,7 @@ texture = ExtResource( 20 )
 
 position = Vector2( -1.88235, -11 )
 scale = Vector2( 3, 5.8 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="toprightPlatform" type="StaticBody2D" parent="LevelDesign01" index="2"]
@@ -659,7 +659,7 @@ texture = ExtResource( 20 )
 
 position = Vector2( -1.88235, -11 )
 scale = Vector2( 3, 5.8 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="startPlatform" type="StaticBody2D" parent="LevelDesign01" index="3"]
@@ -691,7 +691,7 @@ texture = ExtResource( 21 )
 
 position = Vector2( -1.66893e-006, -10 )
 scale = Vector2( 2.13333, 1 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="RotatorPlatform" type="StaticBody2D" parent="LevelDesign01" index="4"]
@@ -832,7 +832,7 @@ texture = ExtResource( 27 )
 
 position = Vector2( 0.333332, -23 )
 scale = Vector2( 3, 1.2 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="lowestPlatform" type="StaticBody2D" parent="LevelDesign01" index="6"]
@@ -850,7 +850,7 @@ bounce = 0.0
 
 position = Vector2( 128, 192 )
 scale = Vector2( 6.5, 0.8 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="step" type="StaticBody2D" parent="LevelDesign01" index="7"]
@@ -871,7 +871,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 5.50001, 16 )
 scale = Vector2( 2.03846, 1 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 
 [node name="rightLedge" type="StaticBody2D" parent="LevelDesign01" index="8"]
 
@@ -890,7 +890,7 @@ bounce = 0.0
 
 position = Vector2( 0.800004, 10.6667 )
 scale = Vector2( 2.83077, 3.2 )
-shape = SubResource( 9 )
+shape = SubResource( 7 )
 
 [node name="jumpBox" type="StaticBody2D" parent="LevelDesign01" index="9"]
 
@@ -907,7 +907,7 @@ bounce = 0.0
 
 position = Vector2( 64, 177 )
 scale = Vector2( 0.9, 0.9 )
-shape = SubResource( 10 )
+shape = SubResource( 8 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="leftLedge" type="StaticBody2D" parent="LevelDesign01" index="10"]
@@ -957,7 +957,7 @@ texture = ExtResource( 31 )
 
 position = Vector2( -9.14284, 3 )
 scale = Vector2( 2.76, 3.6 )
-shape = SubResource( 11 )
+shape = SubResource( 9 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Tiles" type="Node2D" parent="." index="2"]
@@ -2604,14 +2604,14 @@ JUMP = -300
 
 [node name="PlayerSprite" type="AnimatedSprite" parent="KinematicBody2D" index="0"]
 
-frames = SubResource( 1 )
+frames = SubResource( 10 )
 animation = "walkRight"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="1"]
 
 position = Vector2( -1, 0 )
 scale = Vector2( 1.76316, 5.33333 )
-shape = SubResource( 2 )
+shape = SubResource( 11 )
 
 [node name="tile112" type="Sprite" parent="KinematicBody2D" index="2"]
 

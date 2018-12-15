@@ -1,0 +1,182 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://monte-1.png" type="Texture" id=1]
+[ext_resource path="res://mergedTileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://tileset.png" type="Texture" id=4]
+[ext_resource path="res://industrial tileset/tile256.png" type="Texture" id=5]
+[ext_resource path="res://industrial tileset/tile288.png" type="Texture" id=6]
+[ext_resource path="res://industrial tileset/tile320.png" type="Texture" id=7]
+[ext_resource path="res://industrial tileset/tile257.png" type="Texture" id=8]
+[ext_resource path="res://industrial tileset/tile289.png" type="Texture" id=9]
+[ext_resource path="res://industrial tileset/tile321.png" type="Texture" id=10]
+[ext_resource path="res://industrial tileset/tile258.png" type="Texture" id=11]
+[ext_resource path="res://industrial tileset/tile290.png" type="Texture" id=12]
+[ext_resource path="res://industrial tileset/tile322.png" type="Texture" id=13]
+[ext_resource path="res://industrial tileset/tile259.png" type="Texture" id=14]
+[ext_resource path="res://industrial tileset/tile291.png" type="Texture" id=15]
+[ext_resource path="res://industrial tileset/tile323.png" type="Texture" id=16]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="StageOne" type="Node" index="0"]
+
+[node name="monte-1" type="TextureRect" parent="." index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 320.0
+margin_bottom = 197.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 1 )
+stretch_mode = 0
+
+[node name="walls" type="TileMap" parent="." index="1"]
+
+position = Vector2( -48, 16 )
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 196611, 60, 0, 196612, 61, 0, 196613, 60, 0, 196614, 61, 0, 196615, 60, 0, 196616, 61, 0, 196617, 60, 0, 196618, 62, 0, 196620, 33, 0, 196621, 67, 0, 196622, 536870945, 0, 196624, 0, 0, 196625, 60, 0, 196626, 67, 0, 196627, 60, 0, 196628, 61, 0, 196629, 60, 0, 196630, 61, 0, 196631, 60, 0, 262147, 3, 0, 262148, 6, 0, 262149, 72, 0, 262157, 67, 0, 262162, 67, 0, 262166, 72, 0, 262167, 1, 0, 327683, 9, 0, 327684, 12, 0, 327693, 67, 0, 327698, 67, 0, 327701, 25, 0, 327702, 61, 0, 327703, 60, 0, 393219, 31, 0, 393220, 37, 0, 393221, 31, 0, 393222, 22, 0, 393223, 67, 0, 393229, 67, 0, 393234, 67, 0, 393237, 29, 0, 393238, 63, 0, 393239, 63, 0, 458756, 41, 0, 458758, 29, 0, 458759, 67, 0, 458763, 68, 0, 458764, 69, 0, 458765, 70, 0, 458766, 69, 0, 458767, 71, 0, 458770, 67, 0, 458773, 29, 0, 458774, 63, 0, 458775, 63, 0, 524292, 41, 0, 524294, 29, 0, 524295, 67, 0, 524306, 67, 0, 524309, 29, 0, 524310, 63, 0, 524311, 63, 0, 589828, 41, 0, 589830, 29, 0, 589831, 67, 0, 589833, 20, 0, 589834, 31, 0, 589835, 31, 0, 589836, 31, 0, 589837, 31, 0, 589838, 31, 0, 589839, 31, 0, 589840, 31, 0, 589841, 31, 0, 589842, 66, 0, 589843, 66, 0, 589844, 66, 0, 589845, 66, 0, 589846, 66, 0, 589847, 66, 0, 655363, 66, 0, 655364, 66, 0, 655365, 66, 0, 655366, 66, 0, 655367, 66, 0, 655368, 66, 0, 655369, 1610612802, 0, 655370, 1610612802, 0, 655371, 1610612802, 0, 655372, 1610612802, 0, 655373, 1610612802, 0, 655374, 1610612802, 0, 655375, 1610612802, 0, 655376, 1610612802, 0, 655377, 1610612802, 0, 655378, 1610612802, 0, 655379, 1610612802, 0, 655380, 1610612802, 0, 655381, 1610612802, 0, 655382, 1610612802, 0, 655383, 1610612802, 0, 720900, 66, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="Player" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 176, 48 )
+scale = Vector2( 0.890625, 0.921875 )
+
+[node name="Sprite" type="Sprite" parent="." index="3"]
+
+position = Vector2( 136.078, 167.197 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 192, 32, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Sprite4" type="Sprite" parent="." index="4"]
+
+position = Vector2( 152.958, 168.803 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 192, 32, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Sprite2" type="Sprite" parent="." index="5"]
+
+position = Vector2( 166.886, 167.197 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 192, 32, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Sprite3" type="Sprite" parent="." index="6"]
+
+position = Vector2( 199.456, 167.638 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 192, 32, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Sprite5" type="Sprite" parent="." index="7"]
+
+position = Vector2( 183.171, 168.078 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 192, 32, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="rotatorPlatform" type="Node" parent="." index="8"]
+
+editor/display_folded = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="rotatorPlatform" index="0"]
+
+position = Vector2( 135.999, 136.439 )
+frames = SubResource( 1 )
+animation = "default"
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="rotatorPlatform" index="1"]
+
+position = Vector2( 152.283, 136.439 )
+frames = SubResource( 2 )
+animation = "default"
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="rotatorPlatform" index="2"]
+
+position = Vector2( 183.532, 136.439 )
+frames = SubResource( 2 )
+animation = "default"
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="rotatorPlatform" index="3"]
+
+position = Vector2( 168.128, 136.439 )
+frames = SubResource( 3 )
+animation = "default"
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="rotatorPlatform" index="4"]
+
+position = Vector2( 200.697, 136.439 )
+frames = SubResource( 4 )
+animation = "default"
+_sections_unfolded = [ "Material", "Visibility" ]
+
+
