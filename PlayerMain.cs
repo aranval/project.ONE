@@ -3,10 +3,10 @@ using System;
 
 public class PlayerMain : KinematicBody2D
 {
-    public int SPEED = 60; //[Export] pozawala na wyświetlenie parametru w edytorze
+    public int SPEED = 40; //[Export] pozawala na wyświetlenie parametru w edytorze
     public int GRAV = 10;
-    public int JUMP = -250;
-    Vector2 FLOOR = new Vector2(0, -1); 
+    public int JUMP = -200;
+    Vector2 FLOOR = new Vector2(0, -1);
     Vector2 velocity = new Vector2();
     // public AnimatedSprite playerSprite;
     private int direction = 0;
@@ -41,7 +41,7 @@ public class PlayerMain : KinematicBody2D
         // velocity = velocity.Normalized() * SPEED;
         // GD.Print(velocity);
         // GetInput();
-        velocity.y += GRAV; 
+        velocity.y += GRAV;
         velocity = MoveAndSlide(velocity, FLOOR);
     }
 }

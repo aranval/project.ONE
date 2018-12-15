@@ -9,14 +9,10 @@
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="RectangleShape2D" id=2]
 
-animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+custom_solver_bias = 0.0
+extents = Vector2( 8, 5 )
 
 [node name="Tileset" type="Node2D"]
 
@@ -1697,15 +1693,18 @@ shape = SubResource( 1 )
 
 [node name="Tile67" type="Sprite" parent="." index="67"]
 
+editor/display_folded = true
 position = Vector2( 256, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 128, 16, 16 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tile67" index="0"]
 
-visible = false
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -1716,26 +1715,22 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tile67/StaticBody2D" index="0"]
 
-visible = false
-shape = SubResource( 1 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Tile67" index="1"]
-
-frames = SubResource( 2 )
-animation = "default"
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
 
 [node name="Tile68" type="Sprite" parent="." index="68"]
 
-editor/display_folded = true
 position = Vector2( 288, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 16, 128, 16, 16 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tile68" index="0"]
 
-visible = false
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -1746,21 +1741,22 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tile68/StaticBody2D" index="0"]
 
-visible = false
-shape = SubResource( 1 )
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
 
 [node name="Tile69" type="Sprite" parent="." index="69"]
 
-editor/display_folded = true
 position = Vector2( 320, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 32, 128, 16, 16 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tile69" index="0"]
 
-visible = false
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -1771,21 +1767,22 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tile69/StaticBody2D" index="0"]
 
-visible = false
-shape = SubResource( 1 )
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
 
 [node name="Tile70" type="Sprite" parent="." index="70"]
 
-editor/display_folded = true
 position = Vector2( 352, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 48, 128, 16, 16 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tile70" index="0"]
 
-visible = false
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -1796,8 +1793,8 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tile70/StaticBody2D" index="0"]
 
-visible = false
-shape = SubResource( 1 )
+position = Vector2( 0, -3 )
+shape = SubResource( 2 )
 
 [node name="Tile71" type="Sprite" parent="." index="71"]
 
