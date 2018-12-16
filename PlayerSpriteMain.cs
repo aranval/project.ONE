@@ -40,7 +40,7 @@ public class PlayerSpriteMain : KinematicBody2D
             // GD.Print(JUMP);
         }
         // velocity = velocity.Normalized() * SPEED;
-        // GD.Print(velocity);
+        GD.Print(playerSprite.GlobalPosition);
         // GetInput();
         velocity.y += GRAV; 
         velocity = MoveAndSlide(velocity, FLOOR);

@@ -52,6 +52,7 @@
     <Compile Include="PlayerMain.cs" />
     <Compile Include="PlayerSpriteMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RotatorPlatformMain.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
