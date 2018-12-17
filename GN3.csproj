@@ -49,10 +49,11 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PlayerMain.cs" />
     <Compile Include="PlayerSpriteMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RotatorPlatformMain.cs" />
+    <Compile Include="Source\GameplayLoop.cs" />
+    <Compile Include="Source\RotatorPlatformMain.cs" />
+    <Compile Include="Source\PlayerMain.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

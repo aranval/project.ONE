@@ -6,9 +6,9 @@ public class RotatorPlatformMain : AnimatedSprite
     // Member variables here, example:
     // private int a = 2;
     // private string b = "textvar";
-	Sprite rp;
-	PlayerMain pm = new PlayerMain();
-	private float distance;
+	// Sprite rp;
+	// PlayerMain pm = new PlayerMain();
+	// private float distance;
 
     // public override void _Ready()
     // {

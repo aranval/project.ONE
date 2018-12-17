@@ -1720,6 +1720,7 @@ shape = SubResource( 2 )
 
 [node name="Tile68" type="Sprite" parent="." index="68"]
 
+editor/display_folded = true
 position = Vector2( 288, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -1746,6 +1747,7 @@ shape = SubResource( 2 )
 
 [node name="Tile69" type="Sprite" parent="." index="69"]
 
+editor/display_folded = true
 position = Vector2( 320, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -1772,6 +1774,7 @@ shape = SubResource( 2 )
 
 [node name="Tile70" type="Sprite" parent="." index="70"]
 
+editor/display_folded = true
 position = Vector2( 352, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -1851,7 +1854,119 @@ shape = SubResource( 1 )
 position = Vector2( 112, 128 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 16, 80, 16, 16 )
+region_rect = Rect2( 16, 176, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Hook" type="Sprite" parent="." index="74"]
+
+position = Vector2( 144, 128 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 64, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="ThinChain" type="Sprite" parent="." index="75"]
+
+position = Vector2( 176, 128 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 48, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Door00" type="Sprite" parent="." index="76"]
+
+position = Vector2( 208, 128 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 80, 208, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Door01" type="Sprite" parent="." index="77"]
+
+position = Vector2( 240, 128 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 96, 208, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Door02" type="Sprite" parent="." index="78"]
+
+position = Vector2( 272, 128 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 80, 224, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Door03" type="Sprite" parent="." index="79"]
+
+position = Vector2( 304, 128 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 96, 224, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Door04" type="Sprite" parent="." index="80"]
+
+position = Vector2( 112, 148 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 64, 224, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Door05" type="Sprite" parent="." index="81"]
+
+position = Vector2( 144, 148 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 80, 192, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Door06" type="Sprite" parent="." index="82"]
+
+position = Vector2( 176, 148 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 112, 208, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Door07" type="Sprite" parent="." index="83"]
+
+position = Vector2( 208, 148 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 96, 240, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Door08" type="Sprite" parent="." index="84"]
+
+position = Vector2( 336, 148 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 64, 192, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Door09" type="Sprite" parent="." index="85"]
+
+position = Vector2( 240, 148 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 112, 192, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Door10" type="Sprite" parent="." index="86"]
+
+position = Vector2( 272, 148 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 64, 240, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Door11" type="Sprite" parent="." index="87"]
+
+position = Vector2( 304, 148 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 112, 240, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
 
