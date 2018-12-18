@@ -3,7 +3,7 @@ using System;
 
 public class PlayerMain : KinematicBody2D
 {
-    public int SPEED = 40; //[Export] pozawala na wyświetlenie parametru w edytorze
+    public int SPEED = 40; //[Export] public int SPEED = 40; [Export] allows changing variable in-editor for test puproses
     public int GRAV = 10;
     public int JUMP = -200;
     Vector2 FLOOR = new Vector2(0, -1);
@@ -15,11 +15,15 @@ public class PlayerMain : KinematicBody2D
     private Vector2 playerPosition;
     public bool onRotationPlatform = false;
     public bool onLadder = false;
+    public bool hasKey = true;
+    public bool isDead = false;
     public RotatorPlatformMain rpm;
     public override void _PhysicsProcess(float delta)
     {
     	playerSprite = (AnimatedSprite)GetNode("PlayerSprite");
         playerPosition = playerSprite.GlobalPosition;
+        Area2D door = (Area2D) GetParent().GetNode("Door");
+        Area2D door2 = (Area2D) GetParent().GetNode("Door2");
 
         //Checking if on Ladder
         TileMap tm = (TileMap) GetParent().GetNode("walls");
@@ -68,6 +72,7 @@ public class PlayerMain : KinematicBody2D
         	}
         }
 
+        //Jump controls
         if (Input.IsActionPressed("ui_up") && onGround && !onLadder)
         {
             velocity.y = JUMP;
@@ -78,7 +83,7 @@ public class PlayerMain : KinematicBody2D
         	} 
         }
 
-        if (velocity.y > 0) {
+        if (velocity.y >= 0) {
             jumping = false;
         } 
 
@@ -94,8 +99,20 @@ public class PlayerMain : KinematicBody2D
                 velocity = MoveAndSlide(velocity);
             } 
         } else {
+            //Standard grav
             velocity.y += GRAV;
             velocity = MoveAndSlide(velocity, FLOOR);
+        }
+
+        //Basic door controls TODO: develop further, add Door despawn / opening anim
+        if (door.OverlapsBody(GetParent().GetNode("Player")) && hasKey == true) {
+            hasKey = false;
+            door.Hide(); //crash at despawn
+            door.RemoveChild(door.GetNode("Locked"));
+        } else if (door2.OverlapsBody(GetParent().GetNode("Player")) && hasKey == true) {
+            hasKey = false;
+            door2.Hide();
+            door2.RemoveChild(door.GetNode("Locked"));
         }
 
 
@@ -106,7 +123,7 @@ public class PlayerMain : KinematicBody2D
         onGround = IsOnFloor();
         // player = (Sprite)GetNode("PlayerSprite");
         // TileMap tm = (TileMap) GetNode("walls"); Cant see Wall from here
-        GD.Print(jumping);
+        GD.Print(door.OverlapsBody(GetParent().GetNode("Player")) + " " + door2.OverlapsBody(GetParent().GetNode("Player")) + " " + hasKey);
         
     }
 
