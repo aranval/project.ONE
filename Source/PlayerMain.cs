@@ -26,13 +26,13 @@ public class PlayerMain : KinematicBody2D
         Area2D door2 = (Area2D) GetParent().GetNode("Door2");
 
         //Checking if on Ladder
-        TileMap tm = (TileMap) GetParent().GetNode("walls");
+        TileMap tm = (TileMap) GetParent().GetNode("background");
         var worldPos = tm.WorldToMap(playerSprite.GlobalPosition);
         worldPos.x = worldPos.x+3; // ugliest fix possible, no clue why there was some weird [3,-11] offset between grind in Godot and live
         worldPos.y = worldPos.y-1;
         int id = tm.GetCellv(worldPos);
         if (id > -1) { //id > -1 - theres a Tile painted
-            if(tm.GetTileset().TileGetName(id) == "Ladder") {
+            if(tm.GetTileset().TileGetName(id) == "Ladder2") {
                     onLadder = true;
             } else {
                     onLadder = false;
@@ -73,36 +73,39 @@ public class PlayerMain : KinematicBody2D
         }
 
         //Jump controls
-        if (Input.IsActionPressed("ui_up") && onGround && !onLadder)
+        if (Input.IsActionPressed("ui_up") && onGround)
         {
-            velocity.y = JUMP;
+            if(onLadder) {
+                velocity.y = JUMP*2;
+            } else {  
+                velocity.y = JUMP;
+            }
             if(velocity.y < 0) {
         		// playerSprite.FlipH;
                 jumping = true;
             	playerSprite.Play("jump");
         	} 
-        }
-
+        } 
         if (velocity.y >= 0) {
             jumping = false;
         } 
 
-        //Controls on ladder
-        if(onLadder) {
-            if (Input.IsActionPressed("ui_up")) { 
+        //Controls on ladder REMOVE PLACEHOLDER IN JUMP!!!
+        // if(onLadder) {
+        //     if (Input.IsActionPressed("ui_up")) { 
                 
-                velocity.y = -SPEED;
-            } else if (Input.IsActionPressed("ui_down")) {
-                velocity.y = SPEED;
-            } else {
-                velocity.y = 0;
-                velocity = MoveAndSlide(velocity);
-            } 
-        } else {
-            //Standard grav
-            velocity.y += GRAV;
-            velocity = MoveAndSlide(velocity, FLOOR);
-        }
+        //         velocity.y = -SPEED;
+        //     } else if (Input.IsActionPressed("ui_down")) {
+        //         velocity.y = SPEED;
+        //     } else {
+        //         velocity.y = 0;
+        //         velocity = MoveAndSlide(velocity);
+        //     } 
+        // } else {
+        //     //Standard grav
+        //     velocity.y += GRAV;
+        //     velocity = MoveAndSlide(velocity, FLOOR);
+        // }
 
         //Basic door controls TODO: develop further, add Door despawn / opening anim
         if (door.OverlapsBody(GetParent().GetNode("Player")) && hasKey == true) {
@@ -112,8 +115,11 @@ public class PlayerMain : KinematicBody2D
         } else if (door2.OverlapsBody(GetParent().GetNode("Player")) && hasKey == true) {
             hasKey = false;
             door2.Hide();
-            door2.RemoveChild(door.GetNode("Locked"));
+            door2.RemoveChild(door2.GetNode("Locked"));
         }
+        //STANDARD GRAV HANDLING
+        velocity.y += GRAV; 
+        velocity = MoveAndSlide(velocity, FLOOR);
 
 
         // velocity = velocity.Normalized() * SPEED;
@@ -123,7 +129,7 @@ public class PlayerMain : KinematicBody2D
         onGround = IsOnFloor();
         // player = (Sprite)GetNode("PlayerSprite");
         // TileMap tm = (TileMap) GetNode("walls"); Cant see Wall from here
-        GD.Print(door.OverlapsBody(GetParent().GetNode("Player")) + " " + door2.OverlapsBody(GetParent().GetNode("Player")) + " " + hasKey);
+        GD.Print(onLadder);
         
     }
 

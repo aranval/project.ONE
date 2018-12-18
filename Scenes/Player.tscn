@@ -75,7 +75,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 4, 6.45775 )
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 position = Vector2( 9.53674e-007, -4.76837e-007 )
 scale = Vector2( 0.5, 0.5 )
