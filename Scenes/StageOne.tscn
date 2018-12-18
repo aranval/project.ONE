@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/RotatorPlatform.tscn" type="PackedScene" id=5]
 
-[node name="StageOne" type="Node"]
+[node name="StageOne" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -50,53 +50,54 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 10, 75, 0, 65546, 75, 0, 131082, 74, 0 )
+tile_data = PoolIntArray( 7, 40, 0, 8, 46, 0, 10, 75, 0, 12, 44, 0, 13, 40, 0, 65536, 90, 0, 65537, 90, 0, 65538, 90, 0, 65539, 90, 0, 65540, 90, 0, 65541, 90, 0, 65542, 90, 0, 65543, 88, 0, 65546, 75, 0, 65549, 89, 0, 65550, 90, 0, 65551, 90, 0, 65552, 90, 0, 65553, 90, 0, 65554, 90, 0, 65555, 90, 0, 65556, 90, 0, 131082, 74, 0 )
 _sections_unfolded = [ "Cell" ]
 
 [node name="LeftDoor" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 48, 48 )
 
-[node name="Player" parent="." index="3" instance=ExtResource( 4 )]
+[node name="LeftDoor2" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 288, 48 )
+
+[node name="Player" parent="." index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 176, 48 )
 scale = Vector2( 0.890625, 0.921875 )
 
-[node name="RotatorPlatform" parent="." index="4" instance=ExtResource( 5 )]
+[node name="RotatorPlatform" parent="." index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 136, 136 )
 animation = "leftRotator"
-frame = 1
 playing = true
 
-[node name="RotatorPlatform2" parent="." index="5" instance=ExtResource( 5 )]
+[node name="RotatorPlatform2" parent="." index="6" instance=ExtResource( 5 )]
 
 position = Vector2( 152, 136 )
 animation = "middleRotator"
-frame = 1
 playing = true
 
-[node name="RotatorPlatform3" parent="." index="6" instance=ExtResource( 5 )]
+[node name="RotatorPlatform3" parent="." index="7" instance=ExtResource( 5 )]
 
 position = Vector2( 168, 136 )
 animation = "middleWheelRotator"
-frame = 2
-playing = true
-
-[node name="RotatorPlatform4" parent="." index="7" instance=ExtResource( 5 )]
-
-position = Vector2( 184, 136 )
-animation = "middleRotator"
 frame = 1
 playing = true
 
-[node name="RotatorPlatform5" parent="." index="8" instance=ExtResource( 5 )]
+[node name="RotatorPlatform4" parent="." index="8" instance=ExtResource( 5 )]
 
-position = Vector2( 200, 136 )
-frame = 2
+position = Vector2( 184, 136 )
+animation = "middleRotator"
 playing = true
 
-[node name="foreground" type="TileMap" parent="." index="9"]
+[node name="RotatorPlatform5" parent="." index="9" instance=ExtResource( 5 )]
+
+position = Vector2( 200, 136 )
+frame = 1
+playing = true
+
+[node name="foreground" type="TileMap" parent="." index="10"]
 
 position = Vector2( -144, 16 )
 mode = 0
@@ -115,7 +116,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray(  )
+tile_data = PoolIntArray( -65527, 47, 0, -65526, 47, 0, -65525, 39, 0, -65524, 47, 0, -65523, 47, 0, -65522, 47, 0, -65521, 47, 0, -65513, 47, 0, -65512, 47, 0, -65511, 47, 0, -65510, 47, 0, -65509, 47, 0, -65508, 47, 0, -65507, 47, 0, 11, 41, 0, 262155, 92, 0, 262156, 93, 0, 262157, 94, 0, 262159, 95, 0, 262160, 94, 0, 262166, 94, 0, 262167, 95, 0, 262169, 92, 0, 262170, 93, 0, 262171, 92, 0, 262172, 94, 0 )
 _sections_unfolded = [ "Cell" ]
 
 

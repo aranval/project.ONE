@@ -1173,4 +1173,96 @@ extents = Vector2( 8, 5 )
 87/occluder_offset = Vector2( 8, 8 )
 87/navigation_offset = Vector2( 8, 8 )
 87/shapes = [  ]
+88/name = "Tile73"
+88/texture = ExtResource( 1 )
+88/tex_offset = Vector2( 0, 0 )
+88/modulate = Color( 1, 1, 1, 1 )
+88/region = Rect2( 208, 128, 16, 16 )
+88/is_autotile = false
+88/occluder_offset = Vector2( 8, 8 )
+88/navigation_offset = Vector2( 8, 8 )
+88/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
+} ]
+89/name = "Tile74"
+89/texture = ExtResource( 1 )
+89/tex_offset = Vector2( 0, 0 )
+89/modulate = Color( 1, 1, 1, 1 )
+89/region = Rect2( 176, 144, 16, 16 )
+89/is_autotile = false
+89/occluder_offset = Vector2( 8, 8 )
+89/navigation_offset = Vector2( 8, 8 )
+89/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
+} ]
+90/name = "Tile75"
+90/texture = ExtResource( 1 )
+90/tex_offset = Vector2( 0, 0 )
+90/modulate = Color( 1, 1, 1, 1 )
+90/region = Rect2( 192, 112, 16, 16 )
+90/is_autotile = false
+90/occluder_offset = Vector2( 8, 8 )
+90/navigation_offset = Vector2( 8, 8 )
+90/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
+} ]
+91/name = "Tile76"
+91/texture = ExtResource( 1 )
+91/tex_offset = Vector2( 0, 0 )
+91/modulate = Color( 1, 1, 1, 1 )
+91/region = Rect2( 208, 144, 16, 16 )
+91/is_autotile = false
+91/occluder_offset = Vector2( 8, 8 )
+91/navigation_offset = Vector2( 8, 8 )
+91/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
+} ]
+92/name = "Tile77"
+92/texture = ExtResource( 3 )
+92/tex_offset = Vector2( 0, 0 )
+92/modulate = Color( 1, 1, 1, 1 )
+92/region = Rect2( 192, 16, 16, 16 )
+92/is_autotile = false
+92/occluder_offset = Vector2( 8, 8 )
+92/navigation_offset = Vector2( 8, 8 )
+92/shapes = [  ]
+93/name = "Tile78"
+93/texture = ExtResource( 3 )
+93/tex_offset = Vector2( 0, 0 )
+93/modulate = Color( 1, 1, 1, 1 )
+93/region = Rect2( 208, 16, 16, 16 )
+93/is_autotile = false
+93/occluder_offset = Vector2( 8, 8 )
+93/navigation_offset = Vector2( 8, 8 )
+93/shapes = [  ]
+94/name = "Tile79"
+94/texture = ExtResource( 3 )
+94/tex_offset = Vector2( 0, 0 )
+94/modulate = Color( 1, 1, 1, 1 )
+94/region = Rect2( 224, 16, 16, 16 )
+94/is_autotile = false
+94/occluder_offset = Vector2( 8, 8 )
+94/navigation_offset = Vector2( 8, 8 )
+94/shapes = [  ]
+95/name = "Tile80"
+95/texture = ExtResource( 3 )
+95/tex_offset = Vector2( 0, 0 )
+95/modulate = Color( 1, 1, 1, 1 )
+95/region = Rect2( 240, 16, 16, 16 )
+95/is_autotile = false
+95/occluder_offset = Vector2( 8, 8 )
+95/navigation_offset = Vector2( 8, 8 )
+95/shapes = [  ]
 
