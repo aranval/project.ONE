@@ -37,7 +37,7 @@ public class PlayerMain : KinematicBody2D
             onLadder = false;
         }
         
-
+        //Basic controls
         if (Input.IsActionPressed("ui_right"))
         {
             direction = 1;
@@ -47,7 +47,7 @@ public class PlayerMain : KinematicBody2D
                 } else {
                     playerSprite.Play("jump");
                 }
-            playerSprite.FlipH = false;
+            playerSprite.FlipH = false; 
         }
         else if (Input.IsActionPressed("ui_left"))
         {
@@ -58,24 +58,16 @@ public class PlayerMain : KinematicBody2D
                 } else {
                     playerSprite.Play("jump");
                 }
-            playerSprite.FlipH = true;
+            playerSprite.FlipH = true; //flips animation to be coresponding to player direction
         } else {
         	velocity.x = 0;
         	if(direction == -1) {
-        		// playerSprite.FlipH;
-            	playerSprite.Play("idle");
+        		playerSprite.Play("idle");
         	} else {
         		playerSprite.Play("idle");
         	}
         }
-        // if (Input.IsActionPressed("ui_down"))
-        // {
-        //     velocity.y += 1;
-        // }
-        // if (IsOnFloor()) {
-        //     GD.Print("GO UP YOU MOFO");
-        // }
-        
+
         if (Input.IsActionPressed("ui_up") && onGround && !onLadder)
         {
             velocity.y = JUMP;
@@ -90,14 +82,15 @@ public class PlayerMain : KinematicBody2D
             jumping = false;
         } 
 
+        //Controls on ladder
         if(onLadder) {
             if (Input.IsActionPressed("ui_up")) { 
-                velocity.y = 0;
+                
                 velocity.y = -SPEED;
             } else if (Input.IsActionPressed("ui_down")) {
-                velocity.y = 0;
                 velocity.y = SPEED;
             } else {
+                velocity.y = 0;
                 velocity = MoveAndSlide(velocity);
             } 
         } else {
