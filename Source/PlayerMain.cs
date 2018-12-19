@@ -3,9 +3,9 @@ using System;
 
 public class PlayerMain : KinematicBody2D
 {
-    public int SPEED = 40; //[Export] public int SPEED = 40; [Export] allows changing variable in-editor for test puproses
-    public int GRAV = 10;
-    public int JUMP = -200;
+    [Export] public int SPEED = 40; //[Export] public int SPEED = 40; [Export] allows changing variable in-editor for test puproses
+    [Export] public int GRAV = 10;
+    [Export] public int JUMP = -200;
     Vector2 FLOOR = new Vector2(0, -1);
     Vector2 velocity = new Vector2();
     public AnimatedSprite playerSprite;
@@ -15,8 +15,8 @@ public class PlayerMain : KinematicBody2D
     private Vector2 playerPosition;
     public bool onRotationPlatform = false;
     public bool onLadder = false;
-    public bool hasKey = true;
-    public bool isDead = false;
+    [Export] public bool hasKey = true;
+    [Export] public bool isDead = false;
     public RotatorPlatformMain rpm;
     public override void _PhysicsProcess(float delta)
     {
