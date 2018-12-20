@@ -21,7 +21,7 @@ public class PlayerMain : KinematicBody2D
     [Export] public bool isDead = false;
     public RotatorPlatformMain rpm;
 
-    public String _GetPlayerPositionTileType(Vector2 playerPosition, TileMap tm, int x, int y) {
+    public String GetPlayerPositionTileType(Vector2 playerPosition, TileMap tm, int x, int y) {
         var worldPos = tm.WorldToMap(playerSprite.GlobalPosition);
             worldPos.x += x;
             worldPos.y += y;
@@ -38,25 +38,39 @@ public class PlayerMain : KinematicBody2D
         }
     }
 
-    public String _GetPlayerPositionTileType(Vector2 playerPosition, TileMap tm) {
-        return _GetPlayerPositionTileType(playerPosition, tm, 0, 0);
+    public String GetPlayerPositionTileType(Vector2 playerPosition, TileMap tm) {
+        return GetPlayerPositionTileType(playerPosition, tm, 0, 0);
     }
 
-    public Boolean _CheckLadder(Vector2 playerPosition) {
-        if(_GetPlayerPositionTileType(playerPosition, (TileMap) GetParent().GetNode("walls")) == "Ladder") {
+    public Boolean CheckLadder(Vector2 playerPosition) {
+        if(GetPlayerPositionTileType(playerPosition, (TileMap) GetParent().GetNode("walls")) == "Ladder") {
             return true;
         }
         return false;
     }
 
-    public Boolean _CheckRotator(Vector2 playerPosition) {
+    public Boolean CheckRotator(Vector2 playerPosition) {
         TileMap tm = (TileMap) GetParent().GetNode("walls"); // UGLY AF, make containter and a foreach
-        GD.Print(_GetPlayerPositionTileType(playerPosition, tm, 0, 1));
-        if(_GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator00" || _GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator01" || _GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator02" || _GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator03") { 
+        // GD.Print(GetPlayerPositionTileType(playerPosition, tm, 0, 1));
+        if(GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator00" || GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator01" || GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator02" || GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator03") { 
             return true;
         }
  
         return false;
+    }
+
+    public void Dies(){
+        CollisionShape2D collisionShape2D = (CollisionShape2D) GetNode("CollisionShape2D"); 
+        Timer timer = (Timer) GetNode("Timer");
+        isDead = true;
+        velocity = new Vector2(0, 0);
+        playerSprite.Play("dead");
+        collisionShape2D.Disabled = true;
+        timer.Start();
+    }
+
+    public void _OnTimerTimeout(){
+        GetTree().ChangeScene("Scenes\\MainMenu.tscn");
     }
 
     
@@ -68,7 +82,10 @@ public class PlayerMain : KinematicBody2D
         Area2D door = (Area2D) GetParent().GetNode("Door");
         Area2D door2 = (Area2D) GetParent().GetNode("Door2");
         Area2D key = (Area2D) GetParent().GetNode("Key00");
+        Area2D enemyOneHitBox = (Area2D) GetParent().GetNode("EnemyOne").GetNode("Area2D");
 
+        
+        if(!isDead) {
         //Checking if on Ladder
         TileMap tm = (TileMap) GetParent().GetNode("background");
         var worldPos = tm.WorldToMap(playerSprite.GlobalPosition);
@@ -87,7 +104,7 @@ public class PlayerMain : KinematicBody2D
         
         //Basic controls
         int rotator = 0; //pretty sure this can be done way clearer UGLY AF CLEAN THIS SHIT UP
-        if(_CheckRotator(playerPosition)) {
+        if(CheckRotator(playerPosition)) {
             rotator = ROTATOR_SPEED;
         }
         if (Input.IsActionPressed("ui_right"))
@@ -177,6 +194,13 @@ public class PlayerMain : KinematicBody2D
         velocity.y += GRAV; 
         velocity = MoveAndSlide(velocity, FLOOR);
 
+        //COLLISIONS - TODO GET THIS SHIT DONE IN EnemyOne.cs
+        if(enemyOneHitBox.OverlapsBody(GetParent().GetNode("Player"))) {
+            Dies(); 
+        }
+
+        } //END OF IF ISDEAD LOOP
+
 
         // velocity = velocity.Normalized() * SPEED;
         // GD.Print(velocity);
@@ -185,9 +209,9 @@ public class PlayerMain : KinematicBody2D
         onGround = IsOnFloor();
         // player = (Sprite)GetNode("PlayerSprite");
         // TileMap tm = (TileMap) GetNode("walls"); Cant see Wall from here
-        // GD.Print(onLadder + " " + _CheckLadder(playerPosition));
-        // GD.Print(_CheckRotator(playerPosition) + " " + _CheckLadder(playerPosition));
-        GD.Print(hasKey);
+        // GD.Print(onLadder + " " + CheckLadder(playerPosition));
+        // GD.Print(CheckRotator(playerPosition) + " " + CheckLadder(playerPosition));
+        // GD.Print(GetSlideCount());
         
     }
 
