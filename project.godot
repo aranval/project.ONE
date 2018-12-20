@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="GN3"
-run/main_scene="res://Scenes/StageOne.tscn"
+run/main_scene="res://Scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [display]
