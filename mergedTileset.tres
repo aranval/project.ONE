@@ -9,15 +9,15 @@
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[sub_resource type="RectangleShape2D" id=3]
-
-custom_solver_bias = 0.0
-extents = Vector2( 5, 8 )
-
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 5, 8 )
 
 [resource]
 
@@ -1275,4 +1275,74 @@ extents = Vector2( 8, 5 )
 95/occluder_offset = Vector2( 8, 8 )
 95/navigation_offset = Vector2( 8, 8 )
 95/shapes = [  ]
+96/name = "Tile81"
+96/texture = ExtResource( 1 )
+96/tex_offset = Vector2( 0, 0 )
+96/modulate = Color( 1, 1, 1, 1 )
+96/region = Rect2( 192, 32, 16, 16 )
+96/is_autotile = false
+96/occluder_offset = Vector2( 8, 8 )
+96/navigation_offset = Vector2( 8, 8 )
+96/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
+} ]
+97/name = "Rotator00"
+97/texture = ExtResource( 1 )
+97/tex_offset = Vector2( 0, 0 )
+97/modulate = Color( 1, 1, 1, 1 )
+97/region = Rect2( 0, 128, 16, 16 )
+97/is_autotile = false
+97/occluder_offset = Vector2( 8, 8 )
+97/navigation_offset = Vector2( 8, 8 )
+97/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 5 )
+} ]
+98/name = "Rotator01"
+98/texture = ExtResource( 1 )
+98/tex_offset = Vector2( 0, 0 )
+98/modulate = Color( 1, 1, 1, 1 )
+98/region = Rect2( 16, 128, 16, 16 )
+98/is_autotile = false
+98/occluder_offset = Vector2( 8, 8 )
+98/navigation_offset = Vector2( 8, 8 )
+98/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 5 )
+} ]
+99/name = "Rotator02"
+99/texture = ExtResource( 1 )
+99/tex_offset = Vector2( 0, 0 )
+99/modulate = Color( 1, 1, 1, 1 )
+99/region = Rect2( 32, 128, 16, 16 )
+99/is_autotile = false
+99/occluder_offset = Vector2( 8, 8 )
+99/navigation_offset = Vector2( 8, 8 )
+99/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 5 )
+} ]
+100/name = "Rotator03"
+100/texture = ExtResource( 1 )
+100/tex_offset = Vector2( 0, 0 )
+100/modulate = Color( 1, 1, 1, 1 )
+100/region = Rect2( 48, 128, 16, 16 )
+100/is_autotile = false
+100/occluder_offset = Vector2( 8, 8 )
+100/navigation_offset = Vector2( 8, 8 )
+100/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 5 )
+} ]
 
