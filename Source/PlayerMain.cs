@@ -16,7 +16,7 @@ public class PlayerMain : KinematicBody2D
     private Vector2 playerPosition;
     public bool onRotationPlatform = false;
     public bool onLadder = false;
-    [Export] public bool hasKey = true;
+    [Export] public bool hasKey = false;
     [Export] public bool isDead = false;
     public RotatorPlatformMain rpm;
 
@@ -65,6 +65,7 @@ public class PlayerMain : KinematicBody2D
         playerPosition = playerSprite.GlobalPosition;
         Area2D door = (Area2D) GetParent().GetNode("Door");
         Area2D door2 = (Area2D) GetParent().GetNode("Door2");
+        Area2D key = (Area2D) GetParent().GetNode("Key00");
 
         //Checking if on Ladder
         TileMap tm = (TileMap) GetParent().GetNode("background");
@@ -152,7 +153,7 @@ public class PlayerMain : KinematicBody2D
         //     velocity = MoveAndSlide(velocity, FLOOR);
         // }
 
-        //Basic door controls TODO: develop further, add Door despawn / opening anim
+        //Basic door controls TODO: develop further, add Door despawn / opening anim EXPORT TO DoorMain.cs
         if (door.OverlapsBody(GetParent().GetNode("Player")) && hasKey == true) {
             hasKey = false;
             door.Hide(); //crash at despawn
@@ -162,6 +163,13 @@ public class PlayerMain : KinematicBody2D
             door2.Hide();
             door2.RemoveChild(door2.GetNode("Locked"));
         }
+        //Basic key controls EXPORT TO KeyMain.cs
+        if (key.OverlapsBody(GetParent().GetNode("Player"))) {
+            key.Hide();
+            hasKey = true;
+        }
+
+
         //STANDARD GRAV HANDLING
         velocity.y += GRAV; 
         velocity = MoveAndSlide(velocity, FLOOR);
@@ -175,7 +183,8 @@ public class PlayerMain : KinematicBody2D
         // player = (Sprite)GetNode("PlayerSprite");
         // TileMap tm = (TileMap) GetNode("walls"); Cant see Wall from here
         // GD.Print(onLadder + " " + _CheckLadder(playerPosition));
-        GD.Print(_CheckRotator(playerPosition) + " " + _CheckLadder(playerPosition));
+        // GD.Print(_CheckRotator(playerPosition) + " " + _CheckLadder(playerPosition));
+        GD.Print(hasKey);
         
     }
 
