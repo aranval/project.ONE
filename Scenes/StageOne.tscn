@@ -15,7 +15,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 4, 5 )
 
-[node name="StageOne" type="Node"]
+[node name="StageOne" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -142,12 +142,7 @@ position = Vector2( 103, 151 )
 editor/display_folded = true
 position = Vector2( 176, 48 )
 scale = Vector2( 0.890625, 0.921875 )
-SPEED = 40
-GRAV = 10
-JUMP = -200
-ROTATOR_SPEED = 20
 hasKey = true
-isDead = false
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="2"]
 
@@ -205,34 +200,31 @@ __meta__ = {
 
 position = Vector2( 136, 136 )
 animation = "leftRotator"
-frame = 1
 playing = true
 
 [node name="RotatorPlatform2" parent="RotatorAnims" index="1" instance=ExtResource( 9 )]
 
 position = Vector2( 152, 136 )
 animation = "middleRotator"
-frame = 1
 playing = true
 
 [node name="RotatorPlatform3" parent="RotatorAnims" index="2" instance=ExtResource( 9 )]
 
 position = Vector2( 168, 136 )
 animation = "middleWheelRotator"
-frame = 2
+frame = 1
 playing = true
 
 [node name="RotatorPlatform4" parent="RotatorAnims" index="3" instance=ExtResource( 9 )]
 
 position = Vector2( 184, 136 )
 animation = "middleRotator"
-frame = 1
 playing = true
 
 [node name="RotatorPlatform5" parent="RotatorAnims" index="4" instance=ExtResource( 9 )]
 
 position = Vector2( 200, 136 )
-frame = 2
+frame = 1
 playing = true
 
 
