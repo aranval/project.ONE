@@ -1,29 +1,30 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Source/PlayerMain.cs" type="Script" id=1]
 [ext_resource path="res://industrial tileset/tile512.png" type="Texture" id=2]
 [ext_resource path="res://industrial tileset/tile513.png" type="Texture" id=3]
 [ext_resource path="res://industrial tileset/tile514.png" type="Texture" id=4]
-[ext_resource path="res://industrial tileset/tile551.png" type="Texture" id=5]
-[ext_resource path="res://industrial tileset/tile545.png" type="Texture" id=6]
-[ext_resource path="res://industrial tileset/tile546.png" type="Texture" id=7]
-[ext_resource path="res://industrial tileset/tile547.png" type="Texture" id=8]
-[ext_resource path="res://industrial tileset/tile548.png" type="Texture" id=9]
-[ext_resource path="res://industrial tileset/tile549.png" type="Texture" id=10]
-[ext_resource path="res://industrial tileset/tile550.png" type="Texture" id=11]
-[ext_resource path="res://industrial tileset/tile515.png" type="Texture" id=12]
-[ext_resource path="res://industrial tileset/tile516.png" type="Texture" id=13]
-[ext_resource path="res://industrial tileset/tile517.png" type="Texture" id=14]
-[ext_resource path="res://industrial tileset/tile518.png" type="Texture" id=15]
-[ext_resource path="res://industrial tileset/518b.png" type="Texture" id=16]
+[ext_resource path="res://industrial tileset/tile547.png" type="Texture" id=5]
+[ext_resource path="res://industrial tileset/tile548.png" type="Texture" id=6]
+[ext_resource path="res://industrial tileset/tile549.png" type="Texture" id=7]
+[ext_resource path="res://industrial tileset/tile550.png" type="Texture" id=8]
+[ext_resource path="res://industrial tileset/tile515.png" type="Texture" id=9]
+[ext_resource path="res://industrial tileset/tile516.png" type="Texture" id=10]
+[ext_resource path="res://industrial tileset/tile517.png" type="Texture" id=11]
+[ext_resource path="res://industrial tileset/518b.png" type="Texture" id=12]
+[ext_resource path="res://industrial tileset/tile576.png" type="Texture" id=13]
+[ext_resource path="res://industrial tileset/tile577.png" type="Texture" id=14]
+[ext_resource path="res://industrial tileset/tile578.png" type="Texture" id=15]
+[ext_resource path="res://industrial tileset/tile579.png" type="Texture" id=16]
 [ext_resource path="res://industrial tileset/tile608.png" type="Texture" id=17]
 [ext_resource path="res://industrial tileset/tile609.png" type="Texture" id=18]
 [ext_resource path="res://industrial tileset/tile610.png" type="Texture" id=19]
 [ext_resource path="res://industrial tileset/tile611.png" type="Texture" id=20]
-[ext_resource path="res://industrial tileset/tile576.png" type="Texture" id=21]
-[ext_resource path="res://industrial tileset/tile577.png" type="Texture" id=22]
-[ext_resource path="res://industrial tileset/tile578.png" type="Texture" id=23]
-[ext_resource path="res://industrial tileset/tile579.png" type="Texture" id=24]
+[ext_resource path="res://industrial tileset/tile518.png" type="Texture" id=21]
+[ext_resource path="res://industrial tileset/tile551.png" type="Texture" id=22]
+[ext_resource path="res://industrial tileset/tile545.png" type="Texture" id=23]
+[ext_resource path="res://industrial tileset/tile546.png" type="Texture" id=24]
+[ext_resource path="res://Sounds/jump.wav" type="AudioStream" id=25]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -33,29 +34,19 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": false,
-"name": "jump",
-"speed": 3.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "walk",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
-"loop": false,
-"name": "recover",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": false,
 "name": "splash",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": false,
-"name": "idleJump",
+"name": "attackRanged",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
@@ -63,10 +54,20 @@ animations = [ {
 "name": "attack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 2 ) ],
 "loop": false,
-"name": "attackRanged",
+"name": "idleJump",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 21 ) ],
+"loop": false,
+"name": "recover",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"loop": false,
+"name": "jump",
+"speed": 3.0
 } ]
 _sections_unfolded = [ "Resource" ]
 
@@ -75,7 +76,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 4, 6.45775 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 position = Vector2( 9.53674e-007, -4.76837e-007 )
 scale = Vector2( 0.5, 0.5 )
@@ -87,6 +88,12 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+SPEED = 40
+GRAV = 10
+JUMP = -200
+ROTATOR_SPEED = 20
+hasKey = false
+isDead = false
 
 [node name="PlayerSprite" type="AnimatedSprite" parent="." index="0"]
 
@@ -100,5 +107,16 @@ playing = true
 visible = false
 position = Vector2( -0.461668, 1.53833 )
 shape = SubResource( 2 )
+
+[node name="jump" type="AudioStreamPlayer2D" parent="." index="2"]
+
+stream = ExtResource( 25 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

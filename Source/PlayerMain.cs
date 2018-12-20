@@ -10,6 +10,7 @@ public class PlayerMain : KinematicBody2D
     Vector2 FLOOR = new Vector2(0, -1);
     Vector2 velocity = new Vector2();
     public AnimatedSprite playerSprite;
+    public AudioStreamPlayer2D playerSounds;
     private int direction;
     private bool onGround = true;
     private bool jumping;
@@ -62,6 +63,7 @@ public class PlayerMain : KinematicBody2D
     public override void _PhysicsProcess(float delta)
     {
     	playerSprite = (AnimatedSprite)GetNode("PlayerSprite");
+        playerSounds = (AudioStreamPlayer2D)GetNode("jump");
         playerPosition = playerSprite.GlobalPosition;
         Area2D door = (Area2D) GetParent().GetNode("Door");
         Area2D door2 = (Area2D) GetParent().GetNode("Door2");
@@ -112,7 +114,7 @@ public class PlayerMain : KinematicBody2D
         } else {
         	velocity.x = 0-rotator;
         	if(direction == -1) {
-        		playerSprite.Play("idle");
+        		playerSprite.Play("idle"); //Co tu miało być ????
         	} else {
         		playerSprite.Play("idle");
         	}
@@ -130,6 +132,7 @@ public class PlayerMain : KinematicBody2D
         		// playerSprite.FlipH;
                 jumping = true;
             	playerSprite.Play("jump");
+                playerSounds.Play();
         	} 
         } 
         if (velocity.y >= 0) {
