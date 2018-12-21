@@ -1,6 +1,6 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://Source/EnemyOneMain.cs" type="Script" id=1]
+[ext_resource path="res://Source/EnemyTwoMain.cs" type="Script" id=1]
 [ext_resource path="res://industrial tileset/tile646.png" type="Texture" id=2]
 [ext_resource path="res://industrial tileset/tile645.png" type="Texture" id=3]
 [ext_resource path="res://industrial tileset/tile736.png" type="Texture" id=4]
@@ -15,12 +15,6 @@
 [ext_resource path="res://industrial tileset/tile746.png" type="Texture" id=13]
 [ext_resource path="res://industrial tileset/tile747.png" type="Texture" id=14]
 [ext_resource path="res://industrial tileset/tile748.png" type="Texture" id=15]
-[ext_resource path="res://industrial tileset/tile768.png" type="Texture" id=16]
-[ext_resource path="res://industrial tileset/tile769.png" type="Texture" id=17]
-[ext_resource path="res://industrial tileset/tile770.png" type="Texture" id=18]
-[ext_resource path="res://industrial tileset/tile771.png" type="Texture" id=19]
-[ext_resource path="res://industrial tileset/tile772.png" type="Texture" id=20]
-[ext_resource path="res://industrial tileset/tile773.png" type="Texture" id=21]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -41,26 +35,26 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=6]
 
 animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "idle",
-"speed": 10.0
+"speed": 8.0
 }, {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": true,
-"name": "walk",
-"speed": 5.0
+"name": "chase",
+"speed": 16.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
-extents = Vector2( 6, 5 )
+extents = Vector2( 6, 6 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=8]
 
 custom_solver_bias = 0.0
 extents = Vector2( 7, 6 )
@@ -70,7 +64,7 @@ extents = Vector2( 7, 6 )
 custom_solver_bias = 0.0
 points = PoolVector2Array( 0, -10, 8.66025, 5, -8.66025, 5 )
 
-[node name="EnemyOne" type="KinematicBody2D"]
+[node name="EnemyTwo" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -86,18 +80,18 @@ animation = "default"
 
 [node name="EnemySprite" type="AnimatedSprite" parent="." index="1"]
 
-frames = SubResource( 2 )
-animation = "walk"
-frame = 5
+frames = SubResource( 6 )
+animation = "idle"
+frame = 11
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
-shape = SubResource( 3 )
+position = Vector2( 0, 1 )
+shape = SubResource( 7 )
 
 [node name="Hitbox" type="Area2D" parent="." index="3"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -108,7 +102,8 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
 
-shape = SubResource( 4 )
+position = Vector2( 0, 1 )
+shape = SubResource( 8 )
 
 [node name="Aggro" type="Area2D" parent="." index="4"]
 
@@ -122,9 +117,9 @@ audio_bus_name = "Master"
 
 [node name="AggroRange" type="CollisionShape2D" parent="Aggro" index="0"]
 
-position = Vector2( 20, 0 )
+position = Vector2( 37, 7.3e-005 )
 rotation = 1.5708
-scale = Vector2( 1, 4.95174 )
+scale = Vector2( 1, 7.45865 )
 shape = SubResource( 5 )
 _sections_unfolded = [ "Transform" ]
 

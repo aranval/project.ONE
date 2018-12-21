@@ -69,7 +69,8 @@ public class PlayerMain : KinematicBody2D {
      * @return Boolean              Returns true if character enters tile type Ladder            
      */
     public Boolean CheckLadder(Vector2 playerPosition) {
-        if (GetPlayerPositionTileType(playerPosition, (TileMap) GetParent().GetNode("walls")) == "Ladder") {
+        if ((GetPlayerPositionTileType(playerPosition, (TileMap) GetParent().GetNode("walls")) == "Ladder") ||
+            (GetPlayerPositionTileType(playerPosition, (TileMap) GetParent().GetNode("walls"), 0, 1) == "Ladder")) {
             return true;
         }
         return false;

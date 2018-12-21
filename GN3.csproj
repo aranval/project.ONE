@@ -52,7 +52,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\CheckpointMain.cs" />
     <Compile Include="Source\DoorMain.cs" />
+    <Compile Include="Source\EnemyFourMain.cs" />
     <Compile Include="Source\EnemyOneMain.cs" />
+    <Compile Include="Source\EnemyThreeMain.cs" />
+    <Compile Include="Source\EnemyTwoMain.cs" />
     <Compile Include="Source\GameplayLoop.cs" />
     <Compile Include="Source\InGameMenuMain.cs" />
     <Compile Include="Source\KeyMain.cs" />
