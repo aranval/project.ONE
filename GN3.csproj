@@ -50,8 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\CheckpointMain.cs" />
+    <Compile Include="Source\DoorMain.cs" />
     <Compile Include="Source\EnemyOneMain.cs" />
     <Compile Include="Source\GameplayLoop.cs" />
+    <Compile Include="Source\KeyMain.cs" />
     <Compile Include="Source\MainMenuMain.cs" />
     <Compile Include="Source\RotatorPlatformMain.cs" />
     <Compile Include="Source\PlayerMain.cs" />

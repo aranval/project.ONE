@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Source/EnemyOneMain.cs" type="Script" id=1]
 [ext_resource path="res://industrial tileset/tile768.png" type="Texture" id=2]
@@ -27,6 +27,11 @@ extents = Vector2( 6, 5 )
 custom_solver_bias = 0.0
 extents = Vector2( 7, 6 )
 
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = PoolVector2Array( 0, -10, 8.66025, 5, -8.66025, 5 )
+
 [node name="EnemyOne" type="KinematicBody2D"]
 
 input_pickable = false
@@ -39,14 +44,29 @@ script = ExtResource( 1 )
 
 frames = SubResource( 1 )
 animation = "walk"
-frame = 5
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="." index="2"]
+[node name="Hitbox" type="Area2D" parent="." index="2"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
+
+shape = SubResource( 3 )
+
+[node name="Aggro" type="Area2D" parent="." index="3"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -56,8 +76,12 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+[node name="AggroRange" type="CollisionShape2D" parent="Aggro" index="0"]
 
-shape = SubResource( 3 )
+position = Vector2( 20, 0 )
+rotation = 1.5708
+scale = Vector2( 1, 4.95174 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform" ]
 
 

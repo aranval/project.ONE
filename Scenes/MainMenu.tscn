@@ -110,7 +110,6 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 4
 size_flags_vertical = 1
 alignment = 0
-_sections_unfolded = [ "Size Flags" ]
 
 [node name="Continue" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer" index="0"]
 
@@ -122,11 +121,11 @@ margin_right = 55.0
 margin_bottom = 11.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -134,7 +133,7 @@ group = null
 texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 5 )
 texture_disabled = ExtResource( 6 )
-_sections_unfolded = [ "Margin", "Textures" ]
+_sections_unfolded = [ "Focus", "Margin", "Textures" ]
 
 [node name="Start" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer" index="1"]
 
@@ -158,7 +157,7 @@ shortcut = null
 group = null
 texture_normal = ExtResource( 7 )
 texture_focused = ExtResource( 8 )
-_sections_unfolded = [ "Margin", "Textures" ]
+_sections_unfolded = [ "Focus", "Margin", "Mouse", "Textures" ]
 
 [node name="Quit" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer" index="2"]
 
@@ -182,7 +181,7 @@ shortcut = null
 group = null
 texture_normal = ExtResource( 9 )
 texture_hover = ExtResource( 10 )
-_sections_unfolded = [ "Margin", "Textures" ]
+_sections_unfolded = [ "Focus", "Margin", "Textures" ]
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Continue" to="." method="_OnContinuePressed"]
 

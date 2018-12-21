@@ -1,19 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Source/DoorMain.cs" type="Script" id=1]
+[ext_resource path="res://Source/CheckpointMain.cs" type="Script" id=1]
 [ext_resource path="res://mergedTileset.tres" type="TileSet" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 13, 13 )
+extents = Vector2( 4, 5 )
 
-[sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 13 )
-
-[node name="Door" type="Area2D"]
+[node name="Checkpoint" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -42,27 +37,16 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -65538, 536870996, 0, -65537, 536870993, 0, -131072, 81, 0, -131071, 536870997, 0, -2, 80, 0, -1, 76, 0, -65536, 77, 0, -65535, 1073741906, 0, 65534, 1073741904, 0, 65535, 78, 0, 0, 79, 0, 1, 82, 0 )
+tile_data = PoolIntArray( -1, 34, 0, -65536, 35, 0, -65535, 36, 0 )
 _sections_unfolded = [ "Cell" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-scale = Vector2( 1.23077, 1.23077 )
+position = Vector2( 24, -10 )
 shape = SubResource( 1 )
 
-[node name="Locked" type="StaticBody2D" parent="." index="2"]
+[node name="Spawn" type="Position2D" parent="." index="2"]
 
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Locked" index="0"]
-
-scale = Vector2( 1, 1.23077 )
-shape = SubResource( 2 )
+position = Vector2( 9, -16 )
 
 
