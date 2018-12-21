@@ -15,7 +15,7 @@ public class PlayerMain : KinematicBody2D {
     private int direction;
     private bool onGround = true;
     private float prevFrameVelocityY = 0;
-    private bool jumping; // ? useful later
+    private bool justJumped;
     private Vector2 playerPosition;
     public CollisionShape2D playerHitbox;
     public bool onLadder = false;
@@ -93,18 +93,18 @@ public class PlayerMain : KinematicBody2D {
      *  @param reason
      */
     public void PlayerDies(String reason) {
+        Timer deathTimer = GetNode<Timer>("DeathTimer");
+        deathTimer.Start();
         CollisionShape2D collisionShape2D = (CollisionShape2D) GetNode("CollisionShape2D");
-        Timer timer = GetNode<Timer>("Timer");
         isDead = true;
-        lifeCount--;
+        lifeCount -= 1;
+        collisionShape2D.Disabled = true;
         velocity = new Vector2(0, 0);
         if (reason == "hit") {
             playerSprite.Play("dead");
         } else if (reason == "fall") {
             playerSprite.Play("splash");
         }
-        collisionShape2D.Disabled = true;
-        timer.Start();
     }
 
     /** PlayerDies
@@ -128,8 +128,7 @@ public class PlayerMain : KinematicBody2D {
      *  @return
      * TODO: Add Animation, make timer longer
      */
-    private void _OnTimerTimeout() {
-
+    private void _OnDeathTimerTimeout() {
         isDead = false;
         hasFatallyCollided = false;
         playerHitbox.Disabled = false;
@@ -141,17 +140,16 @@ public class PlayerMain : KinematicBody2D {
         }
     }
 
+    private void _OnJumpTimerTimeout() {
+        justJumped = false;
+    }
+
     public override void _PhysicsProcess(float delta) {
         // TODO: Getting scene elements !MIGHT GET LONG AF THINK OF WORKAROUND!
         playerSprite = (AnimatedSprite) GetNode("PlayerSprite");
         playerSounds = (AudioStreamPlayer2D) GetNode("jump");
         playerPosition = playerSprite.GlobalPosition;
         playerHitbox = GetNode<CollisionShape2D>("CollisionShape2D");
-        // Area2D door = (Area2D) GetParent().GetNode("Door");
-        // Area2D door2 = (Area2D) GetParent().GetNode("Door2");
-        // Area2D key = (Area2D) GetParent().GetNode("Key00");
-        // Area2D enemyOneHitBox = (Area2D) GetParent().GetNode("EnemyOne").GetNode("Area2D");
-        // Area2D checkpoint = (Area2D) GetParent().GetNode("Checkpoint00");
 
         if (!isDead) { // TODO: Verify use of Pause (and PausePopup)
 
@@ -202,116 +200,44 @@ public class PlayerMain : KinematicBody2D {
                     playerSprite.Play("idle");
                 }
             }
-            if(Input.IsActionJustPressed("ui_down")) {
-                Vector2 drop = new Vector2(playerPosition.x, playerPosition.y+1);
+            if (Input.IsActionJustPressed("ui_down")) {
+                Vector2 drop = new Vector2(playerPosition.x, playerPosition.y + 1);
                 this.SetPosition(drop);
             }
 
             //Jump controls
-            if (Input.IsActionPressed("ui_up") && onGround) {
-                if (onLadder) {
-                    velocity.y = JUMP * 2;
-                } else {
-                    velocity.y = JUMP;
-                }
-                if (velocity.y < 0) {
-                    jumping = true;
-                    playerSprite.Play("jump");
-                    playerSounds.Play();
-                }
+            if (Input.IsActionPressed("ui_up") && onGround && !justJumped) {
+                velocity.y = JUMP;
+                justJumped = true;
+                playerSounds.Play();
+            }
+            if (velocity.y < 0) {
+                // jumping = true; ? not needed so far, maybe later
+                playerSprite.Play("jump");
             }
             if (velocity.y > 0) {
-                jumping = false;
+                // jumping = false; translation - falling
             }
 
             CheckFallDeath();
             if (velocity.y == 0 && prevFrameVelocityY >= 150) {
-                if(!hasFallen) {
-                    GD.Print("Recovering...");
+                if (!hasFallen) {
+                    Timer timer = GetNode<Timer>("JumpTimer");
                     playerSprite.Play("recover");
+                    timer.Start();
                 } else {
-                    GD.Print("Well, fuck me.");
                     PlayerDies("fall");
                 }
-                
             }
-
             if (hasFatallyCollided) {
                 PlayerDies();
             }
-
-            //Controls on ladder REMOVE PLACEHOLDER IN JUMP!!!
-            // if(onLadder) {
-            //     if (Input.IsActionPressed("ui_up")) { 
-
-            //         velocity.y = -SPEED;
-            //     } else if (Input.IsActionPressed("ui_down")) {
-            //         velocity.y = SPEED;
-            //     } else {
-            //         velocity.y = 0;
-            //         velocity = MoveAndSlide(velocity);
-            //     } 
-            // } else {
-            //     //Standard grav
-            //     velocity.y += GRAV;
-            //     velocity = MoveAndSlide(velocity, FLOOR);
-            // }
-
-            //Basic door controls TODO: develop further, add Door despawn / opening anim EXPORT TO DoorMain.cs
-            // if (door.OverlapsBody(GetParent().GetNode("Player")) && hasKey == true) {
-            //     hasKey = false;
-            //     door.Hide(); //crash at despawn
-            //     door.RemoveChild(door.GetNode("Locked"));
-            // } else if (door2.OverlapsBody(GetParent().GetNode("Player")) && hasKey == true) {
-            //     hasKey = false;
-            //     door2.Hide();
-            //     door2.RemoveChild(door2.GetNode("Locked"));
-            // }
-            //Basic key controls EXPORT TO KeyMain.cs
-            // if (key.OverlapsBody(GetParent().GetNode("Player"))) {
-            //     key.Hide();
-            //     hasKey = true;
-            // }
-            //Basic checkpoint handling, same as above
-            // if (checkpoint.OverlapsBody(GetParent().GetNode("Player"))) {
-            //     currentCheckpoint = checkpoint;
-            // }
-
             prevFrameVelocityY = velocity.y;
             onGround = IsOnFloor();
-            
             //STANDARD GRAV HANDLING
             velocity.y += GRAV;
             velocity = MoveAndSlide(velocity, FLOOR);
-            
-            //COLLISIONS - TODO GET THIS SHIT DONE IN EnemyOne.cs
-            // if (enemyOneHitBox.OverlapsBody(GetParent().GetNode("Player"))) {
-            //     PlayerDies();
-            // }
-
-            //Blink test
-            // if (Input.IsActionJustPressed("ui_test")) {
-            //     // Vector2 pos = this.GetGlobalPosition();
-            //     Position2D spawn = (Position2D) GetParent().GetNode("Spawn00");
-            //     Vector2 pos = spawn.GetGlobalPosition();
-            //     this.SetGlobalPosition(pos);
-            //     GD.Print("CAST SPELL TELEPORT");
-            // }
-
+            GD.Print(lifeCount + " " + hasFallen);
         } //*  END OF IF ISDEAD LOOP
-
-        // velocity = velocity.Normalized() * SPEED;
-
-        
-        
-        // GD.Print(velocity.y + " " + prevFrameVelocityY);
-        // GD.Print(currentCheckpoint);
-        // player = (Sprite)GetNode("PlayerSprite");
-        // TileMap tm = (TileMap) GetNode("walls"); Cant see Wall from here
-        // GD.Print(onLadder + " " + CheckLadder(playerPosition));
-        // GD.Print(CheckRotator(playerPosition) + " " + CheckLadder(playerPosition));
-        // GD.Print(GetSlideCount());
-        // GD.Print(GetPlayerPositionTileType(playerPosition, (TileMap) GetParent().GetNode("walls"), -1, 1) + " " + GetPlayerPositionTileType(playerPosition, (TileMap) GetParent().GetNode("walls"), 0, 1) + GetPlayerPositionTileType(playerPosition, (TileMap) GetParent().GetNode("walls"), 1, 1));
-    }
-
+    } 
 }

@@ -8,6 +8,7 @@ public class EnemyOneMain : KinematicBody2D {
     Vector2 FLOOR = new Vector2(0, -1);
     Vector2 velocity = new Vector2();
     int direction = 1;
+    int targetAquired = 1;
 
     // public override void _Ready()
     // {
@@ -18,14 +19,15 @@ public class EnemyOneMain : KinematicBody2D {
 
     public override void _Process(float delta) {
         AnimatedSprite enemySprite = GetNode<AnimatedSprite>("EnemySprite");
+        AnimatedSprite reactionSprite = GetNode<AnimatedSprite>("ReactionSprite");
         Node player = GetParent().GetNode("Player");
         Area2D hitbox = GetNode<Area2D>("Hitbox");
         Area2D aggro = GetNode<Area2D>("Aggro");
         CollisionShape2D aggroRange = aggro.GetNode<CollisionShape2D>("AggroRange");
 
         enemySprite.Play("walk");
-        velocity.x -= GRAV;
-        velocity.x = SPEED * direction;
+        // velocity.y += GRAV; but lets make him float
+        velocity.x = SPEED * direction * targetAquired;
         velocity = MoveAndSlide(velocity, FLOOR);
         if (IsOnWall()) {
             direction *= -1;
@@ -41,7 +43,13 @@ public class EnemyOneMain : KinematicBody2D {
         }
 
         if(aggro.OverlapsBody(player)) {
+            reactionSprite.Play("aggroON");
             GD.Print("Player in aggro range.");
+            targetAquired = 2;
+        } else if(targetAquired == 2 && !aggro.OverlapsBody(player)) {
+                reactionSprite.Play("aggroOFF");
+                GD.Print("Target lost.");
+                targetAquired = 1;
         }
         if (hitbox.OverlapsBody(player)) {
             player.Set("hasFatallyCollided", true);
