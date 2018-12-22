@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://mergedTileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Source/PlayerMain.cs" type="Script" id=2]
+[ext_resource path="res://industrial tileset/tile513.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="MovementTest" type="Node"]
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+position = Vector2( 160, 80 )
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -1, 106, 0, 65535, 106, 0, 131071, 106, 0, 196607, 106, 0, 262143, 60, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="TestSprite" type="KinematicBody2D" parent="." index="1"]
+
+position = Vector2( 152, 119 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+SPEED = 40
+CLIMB_SPEED = 10
+GRAV = 10
+JUMP = -210
+ROTATOR_SPEED = -20
+PLAYER_FALL_DEATH = 220
+lifeCount = 0
+hasKey = false
+
+[node name="Sprite" type="Sprite" parent="TestSprite" index="0"]
+
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestSprite" index="1"]
+
+shape = SubResource( 1 )
+
+

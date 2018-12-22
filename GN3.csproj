@@ -60,8 +60,10 @@
     <Compile Include="Source\InGameMenuMain.cs" />
     <Compile Include="Source\KeyMain.cs" />
     <Compile Include="Source\MainMenuMain.cs" />
+    <Compile Include="Source\MovementTest.cs" />
     <Compile Include="Source\RotatorPlatformMain.cs" />
     <Compile Include="Source\PlayerMain.cs" />
+    <Compile Include="Source\TestSpriteMain.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

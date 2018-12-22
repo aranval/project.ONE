@@ -2,9 +2,11 @@ using System;
 using Godot;
 
 public class EnemyOneMain : KinematicBody2D {
-    public int SPEED = 10; //[Export] public int SPEED = 40; [Export] allows changing variable in-editor for test puproses
+    [Export] public int SPEED = 10; 
     public int GRAV = 10;
     public int JUMP = -200;
+
+    [Export] bool patrolMode = true;
     Vector2 FLOOR = new Vector2(0, -1);
     Vector2 velocity = new Vector2();
     int direction = 1;
@@ -17,7 +19,7 @@ public class EnemyOneMain : KinematicBody2D {
 
     // }
 
-    public override void _Process(float delta) {
+    public override void _PhysicsProcess(float delta) {
         AnimatedSprite enemySprite = GetNode<AnimatedSprite>("EnemySprite");
         AnimatedSprite reactionSprite = GetNode<AnimatedSprite>("ReactionSprite");
         Node player = GetParent().GetNode("Player");
@@ -27,7 +29,10 @@ public class EnemyOneMain : KinematicBody2D {
 
         enemySprite.Play("walk");
         // velocity.y += GRAV; but lets make him float
-        velocity.x = SPEED * direction * targetAquired;
+        if(patrolMode){
+            velocity.x = SPEED * direction * targetAquired;
+        }
+                
         velocity = MoveAndSlide(velocity, FLOOR);
         if (IsOnWall()) {
             direction *= -1;

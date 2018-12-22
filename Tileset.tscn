@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://industrial.v2.png" type="Texture" id=1]
 [ext_resource path="res://s4m_ur4i_metroid-scifi-tileset.png" type="Texture" id=2]
@@ -29,7 +29,12 @@ extents = Vector2( 8, 2 )
 custom_solver_bias = 0.0
 extents = Vector2( 8, 5 )
 
-[node name="Tileset" type="Node2D" index="0"]
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 2 )
+
+[node name="Tileset" type="Node2D"]
 
 position = Vector2( -16, 0 )
 
@@ -884,7 +889,6 @@ shape = SubResource( 1 )
 
 [node name="Tile81" type="Sprite" parent="." index="34"]
 
-editor/display_folded = true
 position = Vector2( 352, 64 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -1888,7 +1892,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile72" type="Sprite" parent="." index="74"]
+[node name="Spikes" type="Sprite" parent="." index="74"]
 
 editor/display_folded = true
 position = Vector2( 384, 32 )
@@ -1897,9 +1901,8 @@ region_enabled = true
 region_rect = Rect2( 192, 32, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Tile72" index="0"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Spikes" index="0"]
 
-visible = false
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -1908,10 +1911,10 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile72/StaticBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes/StaticBody2D" index="0"]
 
-visible = false
-shape = SubResource( 1 )
+position = Vector2( 0, 6 )
+shape = SubResource( 6 )
 
 [node name="Ladder" type="Sprite" parent="." index="75"]
 
@@ -2033,7 +2036,15 @@ region_enabled = true
 region_rect = Rect2( 96, 224, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door04" type="Sprite" parent="." index="90"]
+[node name="NewLadder" type="Sprite" parent="." index="90"]
+
+position = Vector2( 352, 128 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 16, 176, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Door04" type="Sprite" parent="." index="91"]
 
 position = Vector2( 112, 148 )
 texture = ExtResource( 3 )
@@ -2041,7 +2052,7 @@ region_enabled = true
 region_rect = Rect2( 64, 224, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door05" type="Sprite" parent="." index="91"]
+[node name="Door05" type="Sprite" parent="." index="92"]
 
 position = Vector2( 144, 148 )
 texture = ExtResource( 3 )
@@ -2049,7 +2060,7 @@ region_enabled = true
 region_rect = Rect2( 80, 192, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door06" type="Sprite" parent="." index="92"]
+[node name="Door06" type="Sprite" parent="." index="93"]
 
 position = Vector2( 176, 148 )
 texture = ExtResource( 3 )
@@ -2057,7 +2068,7 @@ region_enabled = true
 region_rect = Rect2( 112, 208, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door07" type="Sprite" parent="." index="93"]
+[node name="Door07" type="Sprite" parent="." index="94"]
 
 position = Vector2( 208, 148 )
 texture = ExtResource( 3 )
@@ -2065,7 +2076,7 @@ region_enabled = true
 region_rect = Rect2( 96, 240, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door08" type="Sprite" parent="." index="94"]
+[node name="Door08" type="Sprite" parent="." index="95"]
 
 position = Vector2( 336, 148 )
 texture = ExtResource( 3 )
@@ -2073,7 +2084,7 @@ region_enabled = true
 region_rect = Rect2( 64, 192, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door09" type="Sprite" parent="." index="95"]
+[node name="Door09" type="Sprite" parent="." index="96"]
 
 position = Vector2( 240, 148 )
 texture = ExtResource( 3 )
@@ -2081,7 +2092,7 @@ region_enabled = true
 region_rect = Rect2( 112, 192, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door10" type="Sprite" parent="." index="96"]
+[node name="Door10" type="Sprite" parent="." index="97"]
 
 position = Vector2( 272, 148 )
 texture = ExtResource( 3 )
@@ -2089,7 +2100,7 @@ region_enabled = true
 region_rect = Rect2( 64, 240, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door11" type="Sprite" parent="." index="97"]
+[node name="Door11" type="Sprite" parent="." index="98"]
 
 position = Vector2( 304, 148 )
 texture = ExtResource( 3 )
@@ -2097,7 +2108,7 @@ region_enabled = true
 region_rect = Rect2( 112, 240, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Tile73" type="Sprite" parent="." index="98"]
+[node name="Tile73" type="Sprite" parent="." index="99"]
 
 editor/display_folded = true
 position = Vector2( 320, 80 )
@@ -2122,7 +2133,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile74" type="Sprite" parent="." index="99"]
+[node name="Tile74" type="Sprite" parent="." index="100"]
 
 editor/display_folded = true
 position = Vector2( 320, 96 )
@@ -2147,7 +2158,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile75" type="Sprite" parent="." index="100"]
+[node name="Tile75" type="Sprite" parent="." index="101"]
 
 editor/display_folded = true
 position = Vector2( 320, 112 )
@@ -2172,7 +2183,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile76" type="Sprite" parent="." index="101"]
+[node name="Tile76" type="Sprite" parent="." index="102"]
 
 editor/display_folded = true
 position = Vector2( 320, 64 )

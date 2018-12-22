@@ -2,13 +2,15 @@ using System;
 using Godot;
 
 public class PlayerMain : KinematicBody2D {
-    [Export] public int SPEED = 40; //[Export] public int SPEED = 40;
+    [Export] public int SPEED = 40; //
+    [Export] public int CLIMB_SPEED = 10;
     [Export] public int GRAV = 10;
     [Export] public int JUMP = -210;
     [Export] public int ROTATOR_SPEED = -20;
     [Export] public int PLAYER_FALL_DEATH = 220;
     [Export] public int lifeCount;
     Vector2 FLOOR = new Vector2(0, -1);
+    Vector2 NOFLOOR = new Vector2(0, 0);
     Vector2 velocity = new Vector2();
     public AnimatedSprite playerSprite;
     public AudioStreamPlayer2D playerSounds;
@@ -69,8 +71,23 @@ public class PlayerMain : KinematicBody2D {
      * @return Boolean              Returns true if character enters tile type Ladder            
      */
     public Boolean CheckLadder(Vector2 playerPosition) {
-        if ((GetPlayerPositionTileType(playerPosition, (TileMap) GetParent().GetNode("walls")) == "Ladder") ||
-            (GetPlayerPositionTileType(playerPosition, (TileMap) GetParent().GetNode("walls"), 0, 1) == "Ladder")) {
+        if ((GetPlayerPositionTileType(playerPosition, (TileMap) GetParent().GetNode("walls")) == "NewLadder") ||
+            (GetPlayerPositionTileType(playerPosition, (TileMap) GetParent().GetNode("walls"), 0, 1) == "NewLadder")) {
+            return true;
+        }
+        return false;
+    }
+
+    public Boolean CheckLadder() {
+        return CheckLadder(playerPosition);
+    }
+
+    /** CheckLadder
+     * @param playerPosition        Global position of specific character
+     * @return Boolean              Returns true if character enters tile type Ladder            
+     */
+    public Boolean CheckSpikes(Vector2 playerPosition) {
+        if ((GetPlayerPositionTileType(playerPosition, (TileMap) GetParent().GetNode("walls")) == "Spikes")) {
             return true;
         }
         return false;
@@ -82,13 +99,13 @@ public class PlayerMain : KinematicBody2D {
      */
     public Boolean CheckRotator(Vector2 playerPosition) {
         TileMap tm = (TileMap) GetParent().GetNode("walls");
-        if (GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator00" || 
-        GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator01" || 
-        GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator02" || 
-        GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator03") {
+        if (GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator00" ||
+            GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator01" ||
+            GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator02" ||
+            GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator03") {
             return true;
-        } else if (GetPlayerPositionTileType(playerPosition, tm, 1, 1) == "Rotator00" 
-        || GetPlayerPositionTileType(playerPosition, tm, -1, 1) == "Rotator03") { //QUICKFIX for edge of hitbox bug
+        } else if (GetPlayerPositionTileType(playerPosition, tm, 1, 1) == "Rotator00" ||
+            GetPlayerPositionTileType(playerPosition, tm, -1, 1) == "Rotator03") { //QUICKFIX for edge of hitbox bug
             return true;
         }
         return false;
@@ -150,13 +167,12 @@ public class PlayerMain : KinematicBody2D {
     }
 
     public override void _PhysicsProcess(float delta) {
-        // TODO: Getting scene elements !MIGHT GET LONG AF THINK OF WORKAROUND!
         playerSprite = (AnimatedSprite) GetNode("PlayerSprite");
         playerSounds = (AudioStreamPlayer2D) GetNode("jump");
         playerPosition = playerSprite.GlobalPosition;
         playerHitbox = GetNode<CollisionShape2D>("CollisionShape2D");
 
-        if (!isDead) { // TODO: Verify use of Pause (and PausePopup)
+        if (!isDead) {
 
             // // // Checking if on Ladder
             // // TileMap tm = (TileMap) GetParent().GetNode("background");
@@ -174,7 +190,7 @@ public class PlayerMain : KinematicBody2D {
             // //     onLadder = false;
             // // }
 
-            //Basic controls
+            //Basic controls + LadderControls
             int rotator = 0; //pretty sure this can be done way clearer UGLY AF CLEAN THIS SHIT UP
             if (CheckRotator(playerPosition)) {
                 rotator = ROTATOR_SPEED;
@@ -205,16 +221,29 @@ public class PlayerMain : KinematicBody2D {
                     playerSprite.Play("idle");
                 }
             }
-            if (Input.IsActionJustPressed("ui_down")) {
+            //Ladder down controls
+            if (Input.IsActionPressed("ui_down") && CheckLadder()) {
+                GD.Print(velocity);
+                if(velocity.y < 0) { velocity.y = 0; }
+                velocity.y += CLIMB_SPEED;
+                MoveAndSlide(velocity);
+                GD.Print(velocity);
+            }
+            if (Input.IsActionJustPressed("ui_down") && onGround) {
                 Vector2 drop = new Vector2(playerPosition.x, playerPosition.y + 1);
                 this.SetPosition(drop);
             }
 
             //Jump controls
-            if (Input.IsActionPressed("ui_up") && onGround && !justJumped) {
+            if (Input.IsActionPressed("ui_up") && onGround && !justJumped && !CheckLadder()) {
                 velocity.y = JUMP;
-                justJumped = true;
                 playerSounds.Play();
+            } 
+            //Ladder up controls
+            if (Input.IsActionPressed("ui_up") && CheckLadder()) {
+                if(velocity.y > 0) { velocity.y = 0; }
+                velocity.y -= CLIMB_SPEED;
+                MoveAndSlide(velocity);
             }
             if (velocity.y < 0) {
                 // jumping = true; ? not needed so far, maybe later
@@ -234,15 +263,24 @@ public class PlayerMain : KinematicBody2D {
                     PlayerDies("fall");
                 }
             }
-            if (hasFatallyCollided) {
+            //Death Handing
+            if (hasFatallyCollided || (CheckSpikes(playerPosition) && onGround)) {
                 PlayerDies();
             }
             prevFrameVelocityY = velocity.y;
+            if (CheckLadder() && !onGround) {
+                onLadder = true;
+            } else {
+                onLadder = false;
+            }
             onGround = IsOnFloor();
+            GD.Print(CheckLadder());
             //STANDARD GRAV HANDLING
-            velocity.y += GRAV;
-            velocity = MoveAndSlide(velocity, FLOOR);
-            GD.Print(lifeCount + " " + hasFallen);
+            if (!onLadder) {
+                velocity.y += GRAV;
+                velocity = MoveAndSlide(velocity, FLOOR);
+            }
+            // GD.Print(lifeCount + " " + hasFallen);
         } //*  END OF IF ISDEAD LOOP
-    } 
+    }
 }
