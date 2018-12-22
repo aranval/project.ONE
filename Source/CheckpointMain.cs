@@ -14,10 +14,17 @@ public class CheckpointMain : Area2D {
 
     public override void _Process(float delta) {
         Node player = GetParent().GetNode("Player");
+        Position2D spawn = (Position2D) GetNode("Spawn");
 
         if (this.OverlapsBody(player)) {
-            Position2D spawn = (Position2D) GetNode("Spawn");
+            
             player.Set("currentCheckpoint", spawn.GetGlobalPosition());
+        }
+
+        if(spawn.GetGlobalPosition() == (Vector2) player.Get("currentCheckpoint")) {
+            GetNode<Sprite>("Active").SetVisible(true);
+        } else {
+            GetNode<Sprite>("Active").SetVisible(false);
         }
     }
 }

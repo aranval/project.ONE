@@ -26,7 +26,7 @@ __meta__ = {
 
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 80, 80, 16, 16 )
+region_rect = Rect2( 96, 80, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]

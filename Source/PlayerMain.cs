@@ -81,10 +81,14 @@ public class PlayerMain : KinematicBody2D {
      * @return Boolean
      */
     public Boolean CheckRotator(Vector2 playerPosition) {
-        TileMap tm = (TileMap) GetParent().GetNode("walls"); // TODO: UGLY AF, make containter and a foreach
-        if (GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator00" || GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator01" || GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator02" || GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator03") {
+        TileMap tm = (TileMap) GetParent().GetNode("walls");
+        if (GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator00" || 
+        GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator01" || 
+        GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator02" || 
+        GetPlayerPositionTileType(playerPosition, tm, 0, 1) == "Rotator03") {
             return true;
-        } else if (GetPlayerPositionTileType(playerPosition, tm, 1, 1) == "Rotator00" || GetPlayerPositionTileType(playerPosition, tm, -1, 1) == "Rotator03") { //QUICKFIX for abusing edge of hitbox
+        } else if (GetPlayerPositionTileType(playerPosition, tm, 1, 1) == "Rotator00" 
+        || GetPlayerPositionTileType(playerPosition, tm, -1, 1) == "Rotator03") { //QUICKFIX for edge of hitbox bug
             return true;
         }
         return false;

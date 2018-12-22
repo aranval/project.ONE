@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Source/CheckpointMain.cs" type="Script" id=1]
 [ext_resource path="res://mergedTileset.tres" type="TileSet" id=2]
+[ext_resource path="res://industrial.v2.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -48,5 +49,13 @@ shape = SubResource( 1 )
 [node name="Spawn" type="Position2D" parent="." index="2"]
 
 position = Vector2( 9, -16 )
+
+[node name="Active" type="Sprite" parent="." index="3"]
+
+position = Vector2( 24, -8 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 304, 80, 16, 16 )
+_sections_unfolded = [ "Region" ]
 
 

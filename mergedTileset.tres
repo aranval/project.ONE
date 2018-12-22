@@ -997,15 +997,15 @@ extents = Vector2( 8, 5 )
 68/texture = ExtResource( 1 )
 68/tex_offset = Vector2( 0, 0 )
 68/modulate = Color( 1, 1, 1, 1 )
-68/region = Rect2( 0, 128, 16, 16 )
+68/region = Rect2( 304, 80, 16, 16 )
 68/is_autotile = false
 68/occluder_offset = Vector2( 8, 8 )
 68/navigation_offset = Vector2( 8, 8 )
 68/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"shape": SubResource( 7 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 8, 5 )
+"one_way": true,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 11 )
 } ]
 69/name = "Tile68"
 69/texture = ExtResource( 1 )

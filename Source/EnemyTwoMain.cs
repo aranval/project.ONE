@@ -9,6 +9,7 @@ public class EnemyTwoMain : KinematicBody2D {
     Vector2 velocity = new Vector2();
     int direction = 1;
     int targetAquired = 1;
+    [Export] bool FlipH = false;
 
     // public override void _Ready()
     // {
@@ -17,7 +18,7 @@ public class EnemyTwoMain : KinematicBody2D {
 
     // }
 
-    public override void _Process(float delta) {
+    public override void _PhysicsProcess(float delta) {
         AnimatedSprite enemySprite = GetNode<AnimatedSprite>("EnemySprite");
         AnimatedSprite reactionSprite = GetNode<AnimatedSprite>("ReactionSprite");
         Node player = GetParent().GetNode("Player");

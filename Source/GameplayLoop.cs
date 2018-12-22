@@ -15,7 +15,7 @@ public class GameplayLoop : Node {
       GetNode<Control>("InGameMenu").Show();
       cont = (TextureButton) GetNode<Control>("InGameMenu").GetChild(0).GetChild(0).GetNode("Continue");
       cont.GrabFocus();
-
+      GetNode<AnimatedSprite>("EnemyTwo2").FlipH = true;; 
     }
   }
 }
