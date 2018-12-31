@@ -1,0 +1,22 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/collisiontileset00.tmx-417988dd6dbda4790c0fe1113a2d71ce.scn"
+
+[deps]
+
+source_file="res://Tilesets/Michnik Tilests/collisiontileset00.tmx"
+dest_files=[ "res://.import/collisiontileset00.tmx-417988dd6dbda4790c0fe1113a2d71ce.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=0
+collision_layer=1
+embed_internal_images=true
+save_tiled_properties=false
+add_background=true
+post_import_script=""
