@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/continueFocused.png-57872ef1c63ef1233a2c7903efc91208.stex"
+path="res://.import/continueActive2.png-e6b25ad53debce2c6c04fdd518c3bf56.stex"
 
 [deps]
 
-source_file="res://Assets/continueFocused.png"
-dest_files=[ "res://.import/continueFocused.png-57872ef1c63ef1233a2c7903efc91208.stex" ]
+source_file="res://Fonts/Assets/continueActive2.png"
+dest_files=[ "res://.import/continueActive2.png-e6b25ad53debce2c6c04fdd518c3bf56.stex" ]
 
 [params]
 

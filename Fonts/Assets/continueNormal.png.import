@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/startNormal.png-4ba4d411a4e1c30937ddbf9f18670e07.stex"
+path="res://.import/continueNormal.png-303489d2da86f0fb42366c7bd12af45b.stex"
 
 [deps]
 
-source_file="res://Assets/startNormal.png"
-dest_files=[ "res://.import/startNormal.png-4ba4d411a4e1c30937ddbf9f18670e07.stex" ]
+source_file="res://Fonts/Assets/continueNormal.png"
+dest_files=[ "res://.import/continueNormal.png-303489d2da86f0fb42366c7bd12af45b.stex" ]
 
 [params]
 

@@ -2,14 +2,14 @@
 
 [ext_resource path="res://Source/MainMenuMain.cs" type="Script" id=1]
 [ext_resource path="res://mergedTileset.tres" type="TileSet" id=2]
-[ext_resource path="res://Assets/title1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/continueNormal.png" type="Texture" id=4]
-[ext_resource path="res://Assets/continueActive2.png" type="Texture" id=5]
-[ext_resource path="res://Assets/continueDisabled.png" type="Texture" id=6]
-[ext_resource path="res://Assets/startNormal.png" type="Texture" id=7]
-[ext_resource path="res://Assets/startActive2.png" type="Texture" id=8]
-[ext_resource path="res://Assets/quitNormal.png" type="Texture" id=9]
-[ext_resource path="res://Assets/quitActive2.png" type="Texture" id=10]
+[ext_resource path="res://Fonts/Assets/title1.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/Assets/continueNormal.png" type="Texture" id=4]
+[ext_resource path="res://Fonts/Assets/continueActive2.png" type="Texture" id=5]
+[ext_resource path="res://Fonts/Assets/continueDisabled.png" type="Texture" id=6]
+[ext_resource path="res://Fonts/Assets/startNormal.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/Assets/startActive2.png" type="Texture" id=8]
+[ext_resource path="res://Fonts/Assets/quitNormal.png" type="Texture" id=9]
+[ext_resource path="res://Fonts/Assets/quitActive2.png" type="Texture" id=10]
 
 [sub_resource type="ButtonGroup" id=1]
 

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/quitActive2.png-d03e439180b7baaf971741039b7857a3.stex"
+path="res://.import/title4.png-7919480a58d6a79d9d79ca5c2f0e7429.stex"
 
 [deps]
 
-source_file="res://Assets/quitActive2.png"
-dest_files=[ "res://.import/quitActive2.png-d03e439180b7baaf971741039b7857a3.stex" ]
+source_file="res://Fonts/Assets/title4.png"
+dest_files=[ "res://.import/title4.png-7919480a58d6a79d9d79ca5c2f0e7429.stex" ]
 
 [params]
 
