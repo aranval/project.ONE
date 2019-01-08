@@ -20,7 +20,7 @@
 [ext_resource path="res://Fonts/Assets/quitNormal.png" type="Texture" id=18]
 [ext_resource path="res://Fonts/Assets/quitActive.png" type="Texture" id=19]
 
-[node name="StageOne" type="Node"]
+[node name="StageOne" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -247,34 +247,32 @@ editor/display_folded = true
 
 position = Vector2( 136, 136 )
 animation = "leftRotator"
-frame = 1
+frame = 2
 playing = true
 
 [node name="RotatorPlatform2" parent="RotatorAnims" index="1" instance=ExtResource( 11 )]
 
 position = Vector2( 152, 136 )
 animation = "middleRotator"
-frame = 1
+frame = 2
 playing = true
 
 [node name="RotatorPlatform3" parent="RotatorAnims" index="2" instance=ExtResource( 11 )]
 
 position = Vector2( 168, 136 )
 animation = "middleWheelRotator"
-frame = 2
 playing = true
 
 [node name="RotatorPlatform4" parent="RotatorAnims" index="3" instance=ExtResource( 11 )]
 
 position = Vector2( 184, 136 )
 animation = "middleRotator"
-frame = 1
+frame = 2
 playing = true
 
 [node name="RotatorPlatform5" parent="RotatorAnims" index="4" instance=ExtResource( 11 )]
 
 position = Vector2( 200, 136 )
-frame = 2
 playing = true
 
 [node name="InGameMenu" type="Control" parent="." index="22"]
