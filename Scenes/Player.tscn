@@ -7,25 +7,25 @@
 [ext_resource path="res://industrial tileset/tile516.png" type="Texture" id=5]
 [ext_resource path="res://industrial tileset/tile517.png" type="Texture" id=6]
 [ext_resource path="res://industrial tileset/518b.png" type="Texture" id=7]
-[ext_resource path="res://industrial tileset/tile515.png" type="Texture" id=8]
-[ext_resource path="res://industrial tileset/tile518.png" type="Texture" id=9]
-[ext_resource path="res://industrial tileset/tile576.png" type="Texture" id=10]
-[ext_resource path="res://industrial tileset/tile577.png" type="Texture" id=11]
-[ext_resource path="res://industrial tileset/tile578.png" type="Texture" id=12]
-[ext_resource path="res://industrial tileset/tile579.png" type="Texture" id=13]
-[ext_resource path="res://industrial tileset/tile608.png" type="Texture" id=14]
-[ext_resource path="res://industrial tileset/tile609.png" type="Texture" id=15]
-[ext_resource path="res://industrial tileset/tile610.png" type="Texture" id=16]
-[ext_resource path="res://industrial tileset/tile611.png" type="Texture" id=17]
+[ext_resource path="res://industrial tileset/tile547.png" type="Texture" id=8]
+[ext_resource path="res://industrial tileset/tile548.png" type="Texture" id=9]
+[ext_resource path="res://industrial tileset/tile549.png" type="Texture" id=10]
+[ext_resource path="res://industrial tileset/tile550.png" type="Texture" id=11]
+[ext_resource path="res://industrial tileset/tile576.png" type="Texture" id=12]
+[ext_resource path="res://industrial tileset/tile577.png" type="Texture" id=13]
+[ext_resource path="res://industrial tileset/tile578.png" type="Texture" id=14]
+[ext_resource path="res://industrial tileset/tile579.png" type="Texture" id=15]
+[ext_resource path="res://industrial tileset/tile515.png" type="Texture" id=16]
+[ext_resource path="res://industrial tileset/tile518.png" type="Texture" id=17]
 [ext_resource path="res://industrial tileset/tile513c.png" type="Texture" id=18]
-[ext_resource path="res://industrial tileset/tile551.png" type="Texture" id=19]
-[ext_resource path="res://industrial tileset/tile545.png" type="Texture" id=20]
-[ext_resource path="res://industrial tileset/tile546.png" type="Texture" id=21]
-[ext_resource path="res://industrial tileset/tile513b.png" type="Texture" id=22]
-[ext_resource path="res://industrial tileset/tile547.png" type="Texture" id=23]
-[ext_resource path="res://industrial tileset/tile548.png" type="Texture" id=24]
-[ext_resource path="res://industrial tileset/tile549.png" type="Texture" id=25]
-[ext_resource path="res://industrial tileset/tile550.png" type="Texture" id=26]
+[ext_resource path="res://industrial tileset/tile513b.png" type="Texture" id=19]
+[ext_resource path="res://industrial tileset/tile608.png" type="Texture" id=20]
+[ext_resource path="res://industrial tileset/tile609.png" type="Texture" id=21]
+[ext_resource path="res://industrial tileset/tile610.png" type="Texture" id=22]
+[ext_resource path="res://industrial tileset/tile611.png" type="Texture" id=23]
+[ext_resource path="res://industrial tileset/tile551.png" type="Texture" id=24]
+[ext_resource path="res://industrial tileset/tile545.png" type="Texture" id=25]
+[ext_resource path="res://industrial tileset/tile546.png" type="Texture" id=26]
 [ext_resource path="res://Sounds/jump.wav" type="AudioStream" id=27]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -41,24 +41,19 @@ animations = [ {
 "name": "splash",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 2 ) ],
-"loop": false,
-"name": "idleJump",
-"speed": 5.0
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "walk",
+"speed": 6.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 9 ) ],
-"loop": false,
-"name": "recover",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": false,
 "name": "attackRanged",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 16 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 17 ) ],
 "loop": false,
-"name": "attack",
+"name": "recover",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 18 ) ],
@@ -66,20 +61,25 @@ animations = [ {
 "name": "dead2",
 "speed": 20.0
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
-"loop": false,
-"name": "jump",
-"speed": 3.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 22 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "dead",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
-"loop": true,
-"name": "walk",
-"speed": 6.0
+"frames": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": false,
+"name": "idleJump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": false,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": false,
+"name": "jump",
+"speed": 3.0
 } ]
 _sections_unfolded = [ "Resource" ]
 
