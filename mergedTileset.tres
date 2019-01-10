@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=13 format=2]
+[gd_resource type="TileSet" load_steps=14 format=2]
 
 [ext_resource path="res://industrial.v2.png" type="Texture" id=1]
 [ext_resource path="res://tileset.png" type="Texture" id=2]
@@ -19,6 +19,11 @@ extents = Vector2( 8, 5 )
 custom_solver_bias = 0.0
 extents = Vector2( 8, 2 )
 
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 5, 1 )
+
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
@@ -34,17 +39,17 @@ extents = Vector2( 8, 2 )
 custom_solver_bias = 0.0
 extents = Vector2( 8, 2 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 
 custom_solver_bias = 0.0
 extents = Vector2( 5, 8 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 5 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=10]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
@@ -1000,7 +1005,7 @@ extents = Vector2( 8, 8 )
 67/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": true,
-"shape": SubResource( 7 ),
+"shape": SubResource( 8 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
 } ]
 68/name = "Tile67"
@@ -1028,7 +1033,7 @@ extents = Vector2( 8, 8 )
 69/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 8 ),
+"shape": SubResource( 9 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 8, 5 )
 } ]
 70/name = "Tile69"
@@ -1042,7 +1047,7 @@ extents = Vector2( 8, 8 )
 70/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 8 ),
+"shape": SubResource( 9 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 8, 5 )
 } ]
 71/name = "Tile70"
@@ -1056,7 +1061,7 @@ extents = Vector2( 8, 8 )
 71/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 8 ),
+"shape": SubResource( 9 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 8, 5 )
 } ]
 72/name = "Tile71"
@@ -1084,7 +1089,7 @@ extents = Vector2( 8, 8 )
 73/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
-"shape": SubResource( 9 ),
+"shape": SubResource( 10 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
 } ]
 74/name = "Hook"
@@ -1434,4 +1439,41 @@ extents = Vector2( 8, 8 )
 106/occluder_offset = Vector2( 8, 8 )
 106/navigation_offset = Vector2( 8, 8 )
 106/shapes = [  ]
+107/name = "Slider"
+107/texture = ExtResource( 1 )
+107/tex_offset = Vector2( 0, 0 )
+107/modulate = Color( 1, 1, 1, 1 )
+107/region = Rect2( 224, 224, 16, 16 )
+107/is_autotile = false
+107/occluder_offset = Vector2( 8, 8 )
+107/navigation_offset = Vector2( 8, 8 )
+107/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 8 )
+} ]
+108/name = "LadderTop"
+108/texture = ExtResource( 3 )
+108/tex_offset = Vector2( 0, 0 )
+108/modulate = Color( 1, 1, 1, 1 )
+108/region = Rect2( 16, 176, 16, 16 )
+108/is_autotile = false
+108/occluder_offset = Vector2( 8, 8 )
+108/navigation_offset = Vector2( 8, 8 )
+108/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": true,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 1 )
+} ]
+109/name = "NewSlider"
+109/texture = ExtResource( 1 )
+109/tex_offset = Vector2( 0, 0 )
+109/modulate = Color( 1, 1, 1, 1 )
+109/region = Rect2( 224, 224, 16, 16 )
+109/is_autotile = false
+109/occluder_offset = Vector2( 8, 8 )
+109/navigation_offset = Vector2( 8, 8 )
+109/shapes = [  ]
 

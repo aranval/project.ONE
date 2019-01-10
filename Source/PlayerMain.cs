@@ -45,7 +45,7 @@ public class PlayerMain : KinematicBody2D {
         worldPos.x += x;
         worldPos.y += y;
         if (tm.GetName() == "walls") {
-            // worldPos.x = worldPos.x + 3; // ? VERIFY IF THE "FIX" IS REQUIRED FOR ALL THE TILESETS
+            // worldPos.x = worldPos.x + 3; // ! ONLY FOR STAGE ONE
             // worldPos.y = worldPos.y - 1;
         }
 
@@ -83,11 +83,18 @@ public class PlayerMain : KinematicBody2D {
     }
 
     public Boolean CheckLadderUnder(Vector2 playerPosition) {
-        if ((GetPlayerPositionTileType(playerPosition, (TileMap) GetParent().GetNode("walls"), 0, 1) == "NewLadder")) {
+        if ((GetPlayerPositionTileType(playerPosition, (TileMap) GetParent().GetNode("walls"), 0, 1) == "LadderTop")) {
             return true;
         }
         return false;
-    }    
+    } 
+
+    public Boolean CheckSlider(Vector2 playerPosition) {
+        if ((GetPlayerPositionTileType(playerPosition, (TileMap) GetParent().GetNode("walls")) == "NewSlider")) {
+            return true;
+        }
+        return false;
+    }   
 
     /** CheckLadder
      * @param playerPosition        Global position of specific character
@@ -147,7 +154,7 @@ public class PlayerMain : KinematicBody2D {
      *  @return Boolean 
      */
     private void CheckFallDeath() {
-        if (velocity.y > PLAYER_FALL_DEATH) {
+        if (velocity.y > PLAYER_FALL_DEATH && !onLadder) {
             hasFallen = true;
         }
     }
@@ -238,11 +245,20 @@ public class PlayerMain : KinematicBody2D {
             }
             //Ladder down controls
             if (Input.IsActionPressed("ui_down") && CheckLadder()) {
-                GD.Print(velocity);
                 if(velocity.y < 0) { velocity.y = 0; }
                 velocity.y += CLIMB_SPEED;
                 MoveAndSlide(velocity);
-                GD.Print(velocity);
+            }
+            //Ladder jumpbug fix
+            if(velocity.y < 0 && !(GetPlayerPositionTileType(playerPosition, (TileMap) GetParent().GetNode("walls")) == "NewLadder") &&
+            (GetPlayerPositionTileType(playerPosition, (TileMap) GetParent().GetNode("walls"), 0, 1) == "NewLadder")) {
+                velocity.y = 0;
+            }
+
+            if(CheckSlider(playerPosition) && !onGround) {
+                if(velocity.y < 0) { velocity.y = 0; }
+                velocity.y += CLIMB_SPEED;
+                MoveAndSlide(velocity);
             }
             //Allows to drop from one-side collision ledges
             if (Input.IsActionJustPressed("ui_down") && onGround) {
