@@ -7,7 +7,7 @@ public class PlayerMain : KinematicBody2D {
     [Export] public int GRAV = 10;
     [Export] public int JUMP = -210;
     [Export] public int ROTATOR_SPEED = -20;
-    [Export] public int PLAYER_FALL_DEATH = 220;
+    public int PLAYER_FALL_DEATH = 2000;
     [Export] public int lifeCount;
     Vector2 FLOOR = new Vector2(0, -1);
     Vector2 NOFLOOR = new Vector2(0, 0);
@@ -45,8 +45,8 @@ public class PlayerMain : KinematicBody2D {
         worldPos.x += x;
         worldPos.y += y;
         if (tm.GetName() == "walls") {
-            worldPos.x = worldPos.x + 3; // ? VERIFY IF THE "FIX" IS REQUIRED FOR ALL THE TILESETS
-            worldPos.y = worldPos.y - 1;
+            // worldPos.x = worldPos.x + 3; // ? VERIFY IF THE "FIX" IS REQUIRED FOR ALL THE TILESETS
+            // worldPos.y = worldPos.y - 1;
         }
 
         int id = tm.GetCellv(worldPos);
@@ -63,7 +63,7 @@ public class PlayerMain : KinematicBody2D {
      * @return Method               Returns most common case - at player position
      */
     public String GetPlayerPositionTileType(Vector2 playerPosition, TileMap tm) {
-        return GetPlayerPositionTileType(playerPosition, tm, 0, 0);
+            return GetPlayerPositionTileType(playerPosition, tm, 0, 0);
     }
 
     /** CheckLadder
@@ -81,6 +81,13 @@ public class PlayerMain : KinematicBody2D {
     public Boolean CheckLadder() {
         return CheckLadder(playerPosition);
     }
+
+    public Boolean CheckLadderUnder(Vector2 playerPosition) {
+        if ((GetPlayerPositionTileType(playerPosition, (TileMap) GetParent().GetNode("walls"), 0, 1) == "NewLadder")) {
+            return true;
+        }
+        return false;
+    }    
 
     /** CheckLadder
      * @param playerPosition        Global position of specific character
@@ -203,6 +210,7 @@ public class PlayerMain : KinematicBody2D {
                 } else {
                     playerSprite.Play("jump");
                 }
+                if(CheckLadder()) MoveAndSlide(velocity);
                 playerSprite.FlipH = false;
             } else if (Input.IsActionPressed("ui_left")) {
                 direction = -1;
@@ -213,6 +221,7 @@ public class PlayerMain : KinematicBody2D {
                     playerSprite.Play("jump");
                 }
                 playerSprite.FlipH = true; //flips animation to be coresponding to player direction
+                if(CheckLadder()) MoveAndSlide(velocity);
             } else {
                 velocity.x = 0 - rotator;
                 if (direction == -1) {
@@ -220,6 +229,12 @@ public class PlayerMain : KinematicBody2D {
                 } else {
                     playerSprite.Play("idle");
                 }
+            }
+            //Ladder up controls
+            if (Input.IsActionPressed("ui_up") && CheckLadder()) {
+                if(velocity.y > 0) { velocity.y = 0; }
+                velocity.y -= CLIMB_SPEED;
+                MoveAndSlide(velocity);
             }
             //Ladder down controls
             if (Input.IsActionPressed("ui_down") && CheckLadder()) {
@@ -229,6 +244,7 @@ public class PlayerMain : KinematicBody2D {
                 MoveAndSlide(velocity);
                 GD.Print(velocity);
             }
+            //Allows to drop from one-side collision ledges
             if (Input.IsActionJustPressed("ui_down") && onGround) {
                 Vector2 drop = new Vector2(playerPosition.x, playerPosition.y + 1);
                 this.SetPosition(drop);
@@ -240,11 +256,7 @@ public class PlayerMain : KinematicBody2D {
                 playerSounds.Play();
             } 
             //Ladder up controls
-            if (Input.IsActionPressed("ui_up") && CheckLadder()) {
-                if(velocity.y > 0) { velocity.y = 0; }
-                velocity.y -= CLIMB_SPEED;
-                MoveAndSlide(velocity);
-            }
+
             if (velocity.y < 0) {
                 // jumping = true; ? not needed so far, maybe later
                 playerSprite.Play("jump");
@@ -274,13 +286,14 @@ public class PlayerMain : KinematicBody2D {
                 onLadder = false;
             }
             onGround = IsOnFloor();
-            GD.Print(CheckLadder());
+            // GD.Print(CheckLadder());
             //STANDARD GRAV HANDLING
             if (!onLadder) {
                 velocity.y += GRAV;
                 velocity = MoveAndSlide(velocity, FLOOR);
             }
-            // GD.Print(lifeCount + " " + hasFallen);
+            TileMap tm = GetParent().GetNode<TileMap>("walls"); 
+            GD.Print(playerPosition + "     " + tm.WorldToMap(playerSprite.GlobalPosition));
         } //*  END OF IF ISDEAD LOOP
     }
 }
