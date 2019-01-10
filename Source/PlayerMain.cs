@@ -240,13 +240,13 @@ public class PlayerMain : KinematicBody2D {
             //Ladder up controls
             if (Input.IsActionPressed("ui_up") && CheckLadder()) {
                 if(velocity.y > 0) { velocity.y = 0; }
-                velocity.y -= CLIMB_SPEED;
+                velocity.y = -CLIMB_SPEED;
                 MoveAndSlide(velocity);
             }
             //Ladder down controls
-            if (Input.IsActionPressed("ui_down") && CheckLadder()) {
+            if (Input.IsActionPressed("ui_down") && CheckLadder() && !(onGround && CheckRotator(playerPosition))) {
                 if(velocity.y < 0) { velocity.y = 0; }
-                velocity.y += CLIMB_SPEED;
+                velocity.y = CLIMB_SPEED;
                 MoveAndSlide(velocity);
             }
             //Ladder jumpbug fix
