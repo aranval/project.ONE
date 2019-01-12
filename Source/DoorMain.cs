@@ -14,13 +14,13 @@ public class DoorMain : Area2D {
 
     public override void _Process(float delta) {
         Node player = GetParent().GetNode("Player");
-        bool hasKey = (bool) player.Get("hasKey");
+        int keyCount = (int) player.Get("keyCount");
 
-        if (this.OverlapsBody(player) && hasKey) {
-            hasKey = false;
-            player.Set("hasKey", hasKey);
+        if (this.OverlapsBody(player) && keyCount > 0) {
+            keyCount--;
+            player.Set("keyCount", keyCount);
             this.Hide(); 
-            this.RemoveChild(this.GetNode("Locked"));
+            this.QueueFree();
         }
     }
 }

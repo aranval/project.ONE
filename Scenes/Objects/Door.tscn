@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 13, 13 )
+extents = Vector2( 10, 13 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -42,16 +42,18 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -65538, 536870996, 0, -65537, 536870993, 0, -131072, 81, 0, -131071, 536870997, 0, -2, 80, 0, -1, 76, 0, -65536, 77, 0, -65535, 1073741906, 0, 65534, 1073741904, 0, 65535, 78, 0, 0, 79, 0, 1, 82, 0 )
+tile_data = PoolIntArray( -65538, 536870996, 0, -131071, 536870997, 0, -65536, 115, 0, 0, 115, 0 )
 _sections_unfolded = [ "Cell" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+position = Vector2( 8, 0 )
 scale = Vector2( 1.23077, 1.23077 )
 shape = SubResource( 1 )
 
 [node name="Locked" type="StaticBody2D" parent="." index="2"]
 
+visible = false
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -62,6 +64,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Locked" index="0"]
 
+position = Vector2( 8, 0 )
 scale = Vector2( 1, 1.23077 )
 shape = SubResource( 2 )
 

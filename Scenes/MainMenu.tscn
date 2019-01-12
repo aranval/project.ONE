@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Source/MainMenuMain.cs" type="Script" id=1]
-[ext_resource path="res://mergedTileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Fonts/Assets/title1.png" type="Texture" id=3]
 [ext_resource path="res://Fonts/Assets/continueNormal.png" type="Texture" id=4]
 [ext_resource path="res://Fonts/Assets/continueActive2.png" type="Texture" id=5]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Fonts/Assets/startActive2.png" type="Texture" id=8]
 [ext_resource path="res://Fonts/Assets/quitNormal.png" type="Texture" id=9]
 [ext_resource path="res://Fonts/Assets/quitActive2.png" type="Texture" id=10]
+[ext_resource path="res://mergedTileset.tres" type="TileSet" id=11]
 
 [sub_resource type="ButtonGroup" id=1]
 
@@ -19,32 +20,17 @@ resource_local_to_scene = true
 
 script = ExtResource( 1 )
 
-[node name="walls" type="TileMap" parent="." index="0"]
+[node name="HUD" type="CanvasLayer" parent="." index="0"]
 
-position = Vector2( -48, 16 )
-mode = 0
-tile_set = ExtResource( 2 )
-cell_size = Vector2( 16, 16 )
-cell_quadrant_size = 16
-cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-cell_half_offset = 2
-cell_tile_origin = 0
-cell_y_sort = false
-cell_clip_uv = false
-collision_use_kinematic = false
-collision_friction = 1.0
-collision_bounce = 0.0
-collision_layer = 1
-collision_mask = 1
-occluder_light_mask = 1
-format = 1
-tile_data = PoolIntArray( 65542, 84, 0, 65556, 85, 0, 262135, 28, 0, 262136, 67, 0, 262137, 0, 0, 262138, 60, 0, 262139, 61, 0, 262140, 60, 0, 262141, 61, 0, 262142, 60, 0, 262143, 61, 0, 196608, 60, 0, 196609, 61, 0, 196610, 61, 0, 196611, 60, 0, 196612, 61, 0, 196613, 60, 0, 196614, 61, 0, 196615, 60, 0, 196616, 61, 0, 196617, 60, 0, 196618, 62, 0, 196624, 0, 0, 196625, 60, 0, 196626, 67, 0, 196627, 60, 0, 196628, 61, 0, 196629, 60, 0, 196630, 61, 0, 196631, 60, 0, 196632, 60, 0, 196633, 21, 0, 196634, 31, 0, 196635, 31, 0, 196636, 31, 0, 196637, 31, 0, 196638, 31, 0, 196639, 31, 0, 196640, 31, 0, 196641, 67, 0, 196642, 31, 0, 196643, 43, 0, 327672, 67, 0, 262147, 3, 0, 262148, 6, 0, 262162, 67, 0, 262167, 1, 0, 262168, 6, 0, 262177, 67, 0, 393208, 67, 0, 327683, 9, 0, 327684, 12, 0, 327698, 67, 0, 327701, 25, 0, 327702, 61, 0, 327703, 60, 0, 327708, 48, 0, 327709, 67, 0, 327710, 54, 0, 327711, 55, 0, 327712, 54, 0, 327713, 57, 0, 327714, 56, 0, 327715, 55, 0, 327716, 57, 0, 327717, 58, 0, 327718, 18, 0, 458744, 67, 0, 393219, 31, 0, 393220, 31, 0, 393221, 31, 0, 393222, 22, 0, 393223, 67, 0, 393234, 67, 0, 393237, 29, 0, 393238, 63, 0, 393239, 63, 0, 393245, 67, 0, 393254, 15, 0, 524280, 67, 0, 458758, 29, 0, 458759, 67, 0, 458770, 67, 0, 458773, 29, 0, 458774, 63, 0, 458775, 63, 0, 458781, 67, 0, 458790, 15, 0, 589816, 67, 0, 524294, 29, 0, 524295, 67, 0, 524306, 67, 0, 524309, 29, 0, 524310, 63, 0, 524311, 63, 0, 524315, 20, 0, 524316, 31, 0, 524317, 31, 0, 524318, 31, 0, 524319, 43, 0, 524320, 67, 0, 524321, 45, 0, 524322, 31, 0, 524323, 31, 0, 524324, 31, 0, 524325, 43, 0, 524326, 16, 0, 655352, 67, 0, 589830, 29, 0, 589831, 67, 0, 589833, 20, 0, 589834, 96, 0, 589835, 96, 0, 589836, 96, 0, 589837, 96, 0, 589838, 96, 0, 589839, 96, 0, 589840, 96, 0, 589841, 31, 0, 589842, 66, 0, 589843, 66, 0, 589844, 66, 0, 589845, 66, 0, 589846, 66, 0, 589847, 66, 0, 589856, 67, 0, 720888, 67, 0, 655363, 66, 0, 655364, 66, 0, 655365, 66, 0, 655366, 66, 0, 655367, 66, 0, 655368, 66, 0, 655369, 1610612802, 0, 655370, 1610612802, 0, 655371, 1610612802, 0, 655372, 1610612802, 0, 655373, 1610612802, 0, 655374, 1610612802, 0, 655375, 1610612802, 0, 655376, 1610612802, 0, 655377, 1610612802, 0, 655378, 1610612802, 0, 655379, 1610612802, 0, 655380, 1610612802, 0, 655381, 1610612802, 0, 655382, 1610612802, 0, 655383, 1610612802, 0, 655392, 67, 0, 786424, 67, 0, 851960, 67, 0, 917496, 67, 0, 983032, 67, 0, 1048568, 33, 0 )
-_sections_unfolded = [ "Cell", "Collision", "Material", "Occluder", "Pause", "Transform", "Visibility", "Z Index" ]
-__meta__ = {
-"_edit_lock_": true
-}
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="MarginContainer" type="MarginContainer" parent="." index="1"]
+[node name="GUI" parent="HUD" index="0" instance=ExtResource( 2 )]
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -58,10 +44,11 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_constants/margin_top = 20
 custom_constants/margin_bottom = 20
-_sections_unfolded = [ "Margin" ]
+_sections_unfolded = [ "Margin", "Visibility" ]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" index="0"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/MarginContainer" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -80,7 +67,7 @@ custom_constants/separation = 0
 alignment = 1
 _sections_unfolded = [ "Size Flags", "custom_constants" ]
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer" index="0"]
+[node name="TextureRect" type="TextureRect" parent="HUD/MarginContainer/VBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -98,7 +85,7 @@ size_flags_vertical = 1
 texture = ExtResource( 3 )
 stretch_mode = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" index="1"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/MarginContainer/VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -117,7 +104,7 @@ size_flags_vertical = 4
 alignment = 0
 _sections_unfolded = [ "Material", "Pause", "Visibility" ]
 
-[node name="Continue" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer" index="0"]
+[node name="Continue" type="TextureButton" parent="HUD/MarginContainer/VBoxContainer/VBoxContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -144,7 +131,7 @@ texture_disabled = ExtResource( 6 )
 stretch_mode = 5
 _sections_unfolded = [ "Anchor", "Focus", "Margin", "Size Flags", "Textures" ]
 
-[node name="Start" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer" index="1"]
+[node name="Start" type="TextureButton" parent="HUD/MarginContainer/VBoxContainer/VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -169,7 +156,7 @@ texture_hover = ExtResource( 8 )
 texture_focused = ExtResource( 8 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="Quit" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer" index="2"]
+[node name="Quit" type="TextureButton" parent="HUD/MarginContainer/VBoxContainer/VBoxContainer" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -194,10 +181,35 @@ texture_normal = ExtResource( 9 )
 texture_hover = ExtResource( 10 )
 _sections_unfolded = [ "Textures" ]
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Continue" to="." method="_OnContinuePressed"]
+[node name="walls" type="TileMap" parent="HUD/MarginContainer" index="1"]
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Start" to="." method="_OnStartPressed"]
+position = Vector2( -48, 16 )
+mode = 0
+tile_set = ExtResource( 11 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 65542, 84, 0, 65556, 85, 0, 262135, 28, 0, 262136, 67, 0, 262137, 0, 0, 262138, 60, 0, 262139, 61, 0, 262140, 60, 0, 262141, 61, 0, 262142, 60, 0, 262143, 61, 0, 196608, 60, 0, 196609, 61, 0, 196610, 61, 0, 196611, 60, 0, 196612, 61, 0, 196613, 60, 0, 196614, 61, 0, 196615, 60, 0, 196616, 61, 0, 196617, 60, 0, 196618, 62, 0, 196624, 0, 0, 196625, 60, 0, 196626, 67, 0, 196627, 60, 0, 196628, 61, 0, 196629, 60, 0, 196630, 61, 0, 196631, 60, 0, 196632, 60, 0, 196633, 21, 0, 196634, 31, 0, 196635, 31, 0, 196636, 31, 0, 196637, 31, 0, 196638, 31, 0, 196639, 31, 0, 196640, 31, 0, 196641, 67, 0, 196642, 31, 0, 196643, 43, 0, 327672, 67, 0, 262147, 3, 0, 262148, 6, 0, 262162, 67, 0, 262167, 1, 0, 262168, 6, 0, 262177, 67, 0, 393208, 67, 0, 327683, 9, 0, 327684, 12, 0, 327698, 67, 0, 327701, 25, 0, 327702, 61, 0, 327703, 60, 0, 327708, 48, 0, 327709, 67, 0, 327710, 54, 0, 327711, 55, 0, 327712, 54, 0, 327713, 57, 0, 327714, 56, 0, 327715, 55, 0, 327716, 57, 0, 327717, 58, 0, 327718, 18, 0, 458744, 67, 0, 393219, 31, 0, 393220, 31, 0, 393221, 31, 0, 393222, 22, 0, 393223, 67, 0, 393234, 67, 0, 393237, 29, 0, 393238, 63, 0, 393239, 63, 0, 393245, 67, 0, 393254, 15, 0, 524280, 67, 0, 458758, 29, 0, 458759, 67, 0, 458770, 67, 0, 458773, 29, 0, 458774, 63, 0, 458775, 63, 0, 458781, 67, 0, 458790, 15, 0, 589816, 67, 0, 524294, 29, 0, 524295, 67, 0, 524306, 67, 0, 524309, 29, 0, 524310, 63, 0, 524311, 63, 0, 524315, 20, 0, 524316, 31, 0, 524317, 31, 0, 524318, 31, 0, 524319, 43, 0, 524320, 67, 0, 524321, 45, 0, 524322, 31, 0, 524323, 31, 0, 524324, 31, 0, 524325, 43, 0, 524326, 16, 0, 655352, 67, 0, 589830, 29, 0, 589831, 67, 0, 589833, 20, 0, 589834, 96, 0, 589835, 96, 0, 589836, 96, 0, 589837, 96, 0, 589838, 96, 0, 589839, 96, 0, 589840, 96, 0, 589841, 31, 0, 589842, 66, 0, 589843, 66, 0, 589844, 66, 0, 589845, 66, 0, 589846, 66, 0, 589847, 66, 0, 589856, 67, 0, 720888, 67, 0, 655363, 66, 0, 655364, 66, 0, 655365, 66, 0, 655366, 66, 0, 655367, 66, 0, 655368, 66, 0, 655369, 1610612802, 0, 655370, 1610612802, 0, 655371, 1610612802, 0, 655372, 1610612802, 0, 655373, 1610612802, 0, 655374, 1610612802, 0, 655375, 1610612802, 0, 655376, 1610612802, 0, 655377, 1610612802, 0, 655378, 1610612802, 0, 655379, 1610612802, 0, 655380, 1610612802, 0, 655381, 1610612802, 0, 655382, 1610612802, 0, 655383, 1610612802, 0, 655392, 67, 0, 786424, 67, 0, 851960, 67, 0, 917496, 67, 0, 983032, 67, 0, 1048568, 33, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Material", "Occluder", "Pause", "Transform", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Quit" to="." method="_OnQuitPressed"]
+[connection signal="pressed" from="HUD/MarginContainer/VBoxContainer/VBoxContainer/Continue" to="." method="_OnContinuePressed"]
+
+[connection signal="pressed" from="HUD/MarginContainer/VBoxContainer/VBoxContainer/Start" to="." method="_OnStartPressed"]
+
+[connection signal="pressed" from="HUD/MarginContainer/VBoxContainer/VBoxContainer/Quit" to="." method="_OnQuitPressed"]
 
 

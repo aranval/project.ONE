@@ -1173,13 +1173,37 @@ _sections_unfolded = [ "Region" ]
 
 [node name="NewSlider" type="Sprite" parent="." index="46"]
 
-position = Vector2( 304, 160 )
+position = Vector2( 320, 160 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 224, 224, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Tile42" type="Sprite" parent="." index="47"]
+[node name="SliderTop01" type="Sprite" parent="." index="47"]
+
+position = Vector2( 336, 160 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 240, 224, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="SilderTop02" type="Sprite" parent="." index="48"]
+
+position = Vector2( 352, 160 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 256, 224, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="SilderBot01" type="Sprite" parent="." index="49"]
+
+position = Vector2( 368, 160 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 272, 224, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Tile42" type="Sprite" parent="." index="50"]
 
 editor/display_folded = true
 position = Vector2( 160, 112 )
@@ -1204,7 +1228,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile45" type="Sprite" parent="." index="48"]
+[node name="Tile45" type="Sprite" parent="." index="51"]
 
 editor/display_folded = true
 position = Vector2( 144, 112 )
@@ -1229,7 +1253,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile43" type="Sprite" parent="." index="49"]
+[node name="Tile43" type="Sprite" parent="." index="52"]
 
 editor/display_folded = true
 position = Vector2( 112, 112 )
@@ -1254,7 +1278,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile44" type="Sprite" parent="." index="50"]
+[node name="Tile44" type="Sprite" parent="." index="53"]
 
 editor/display_folded = true
 position = Vector2( 128, 112 )
@@ -1279,7 +1303,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile37" type="Sprite" parent="." index="51"]
+[node name="Tile37" type="Sprite" parent="." index="54"]
 
 editor/display_folded = true
 position = Vector2( 176, 64 )
@@ -1304,7 +1328,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile07" type="Sprite" parent="." index="52"]
+[node name="Tile07" type="Sprite" parent="." index="55"]
 
 editor/display_folded = true
 position = Vector2( 0, 32 )
@@ -1330,7 +1354,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile08" type="Sprite" parent="." index="53"]
+[node name="Tile08" type="Sprite" parent="." index="56"]
 
 editor/display_folded = true
 position = Vector2( 32, 32 )
@@ -1355,7 +1379,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile09" type="Sprite" parent="." index="54"]
+[node name="Tile09" type="Sprite" parent="." index="57"]
 
 editor/display_folded = true
 position = Vector2( 64, 32 )
@@ -1380,7 +1404,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile10" type="Sprite" parent="." index="55"]
+[node name="Tile10" type="Sprite" parent="." index="58"]
 
 editor/display_folded = true
 position = Vector2( 96, 32 )
@@ -1405,7 +1429,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile11" type="Sprite" parent="." index="56"]
+[node name="Tile11" type="Sprite" parent="." index="59"]
 
 editor/display_folded = true
 position = Vector2( 128, 32 )
@@ -1430,7 +1454,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile12" type="Sprite" parent="." index="57"]
+[node name="Tile12" type="Sprite" parent="." index="60"]
 
 editor/display_folded = true
 position = Vector2( 160, 32 )
@@ -1455,7 +1479,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile13" type="Sprite" parent="." index="58"]
+[node name="Tile13" type="Sprite" parent="." index="61"]
 
 editor/display_folded = true
 position = Vector2( 192, 32 )
@@ -1480,7 +1504,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile14" type="Sprite" parent="." index="59"]
+[node name="Tile14" type="Sprite" parent="." index="62"]
 
 editor/display_folded = true
 position = Vector2( 224, 32 )
@@ -1505,7 +1529,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile15" type="Sprite" parent="." index="60"]
+[node name="Tile15" type="Sprite" parent="." index="63"]
 
 editor/display_folded = true
 position = Vector2( 256, 32 )
@@ -1530,7 +1554,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile16" type="Sprite" parent="." index="61"]
+[node name="Tile16" type="Sprite" parent="." index="64"]
 
 editor/display_folded = true
 position = Vector2( 288, 32 )
@@ -1555,7 +1579,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile17" type="Sprite" parent="." index="62"]
+[node name="Tile17" type="Sprite" parent="." index="65"]
 
 editor/display_folded = true
 position = Vector2( 320, 32 )
@@ -1580,7 +1604,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile18" type="Sprite" parent="." index="63"]
+[node name="Tile18" type="Sprite" parent="." index="66"]
 
 editor/display_folded = true
 position = Vector2( 352, 32 )
@@ -1605,7 +1629,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile01" type="Sprite" parent="." index="64"]
+[node name="Tile01" type="Sprite" parent="." index="67"]
 
 editor/display_folded = true
 position = Vector2( 32, 0 )
@@ -1630,7 +1654,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile02" type="Sprite" parent="." index="65"]
+[node name="Tile02" type="Sprite" parent="." index="68"]
 
 editor/display_folded = true
 position = Vector2( 64, 0 )
@@ -1655,7 +1679,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile03" type="Sprite" parent="." index="66"]
+[node name="Tile03" type="Sprite" parent="." index="69"]
 
 editor/display_folded = true
 position = Vector2( 96, 0 )
@@ -1680,7 +1704,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile04" type="Sprite" parent="." index="67"]
+[node name="Tile04" type="Sprite" parent="." index="70"]
 
 editor/display_folded = true
 position = Vector2( 128, 0 )
@@ -1705,7 +1729,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile05" type="Sprite" parent="." index="68"]
+[node name="Tile05" type="Sprite" parent="." index="71"]
 
 editor/display_folded = true
 position = Vector2( 160, 0 )
@@ -1730,7 +1754,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile06" type="Sprite" parent="." index="69"]
+[node name="Tile06" type="Sprite" parent="." index="72"]
 
 editor/display_folded = true
 position = Vector2( 192, 0 )
@@ -1755,7 +1779,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile19" type="Sprite" parent="." index="70"]
+[node name="Tile19" type="Sprite" parent="." index="73"]
 
 editor/display_folded = true
 position = Vector2( 224, 0 )
@@ -1780,7 +1804,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Rotator00" type="Sprite" parent="." index="71"]
+[node name="Rotator00" type="Sprite" parent="." index="74"]
 
 editor/display_folded = true
 position = Vector2( 256, 0 )
@@ -1807,7 +1831,7 @@ bounce = 0.0
 position = Vector2( 0, -3 )
 shape = SubResource( 5 )
 
-[node name="Rotator01" type="Sprite" parent="." index="72"]
+[node name="Rotator01" type="Sprite" parent="." index="75"]
 
 editor/display_folded = true
 position = Vector2( 288, 0 )
@@ -1834,7 +1858,7 @@ bounce = 0.0
 position = Vector2( 0, -3 )
 shape = SubResource( 5 )
 
-[node name="Rotator02" type="Sprite" parent="." index="73"]
+[node name="Rotator02" type="Sprite" parent="." index="76"]
 
 editor/display_folded = true
 position = Vector2( 320, 0 )
@@ -1861,7 +1885,7 @@ bounce = 0.0
 position = Vector2( 0, -3 )
 shape = SubResource( 5 )
 
-[node name="Rotator03" type="Sprite" parent="." index="74"]
+[node name="Rotator03" type="Sprite" parent="." index="77"]
 
 editor/display_folded = true
 position = Vector2( 352, 0 )
@@ -1888,7 +1912,7 @@ bounce = 0.0
 position = Vector2( 0, -3 )
 shape = SubResource( 5 )
 
-[node name="Tile71" type="Sprite" parent="." index="75"]
+[node name="Tile71" type="Sprite" parent="." index="78"]
 
 editor/display_folded = true
 position = Vector2( 384, 0 )
@@ -1913,7 +1937,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Spikes" type="Sprite" parent="." index="76"]
+[node name="Spikes" type="Sprite" parent="." index="79"]
 
 editor/display_folded = true
 position = Vector2( 384, 32 )
@@ -1937,7 +1961,7 @@ bounce = 0.0
 position = Vector2( 0, 6 )
 shape = SubResource( 6 )
 
-[node name="Ladder" type="Sprite" parent="." index="77"]
+[node name="Ladder" type="Sprite" parent="." index="80"]
 
 position = Vector2( 112, 128 )
 texture = ExtResource( 2 )
@@ -1945,13 +1969,16 @@ region_enabled = true
 region_rect = Rect2( 16, 176, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="LadderTop" type="Sprite" parent="." index="78"]
+[node name="LadderTop" type="Sprite" parent="." index="81"]
 
-position = Vector2( 352, 160 )
+position = Vector2( 384, 128 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 16, 176, 16, 16 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="LadderTop" index="0"]
 
@@ -1969,7 +1996,7 @@ position = Vector2( 0, -7 )
 shape = SubResource( 7 )
 one_way_collision = true
 
-[node name="Hook" type="Sprite" parent="." index="79"]
+[node name="Hook" type="Sprite" parent="." index="82"]
 
 position = Vector2( 144, 128 )
 texture = ExtResource( 3 )
@@ -1977,7 +2004,15 @@ region_enabled = true
 region_rect = Rect2( 0, 64, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="ThinChain" type="Sprite" parent="." index="80"]
+[node name="HookActive" type="Sprite" parent="." index="83"]
+
+position = Vector2( 296, 184 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 96, 64, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="ThinChain" type="Sprite" parent="." index="84"]
 
 position = Vector2( 176, 128 )
 texture = ExtResource( 3 )
@@ -1985,7 +2020,63 @@ region_enabled = true
 region_rect = Rect2( 0, 48, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door00" type="Sprite" parent="." index="81"]
+[node name="ThinChainActive" type="Sprite" parent="." index="85"]
+
+position = Vector2( 328, 184 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 80, 48, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="gateA" type="Sprite" parent="." index="86"]
+
+position = Vector2( 352, 192 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 96, 48, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Life" type="Sprite" parent="." index="87"]
+
+position = Vector2( 352, 224 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 144, 256, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="LifeLost" type="Sprite" parent="." index="88"]
+
+position = Vector2( 384, 224 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 160, 256, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="gateB00" type="Sprite" parent="." index="89"]
+
+position = Vector2( 384, 192 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 112, 48, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="gateB01" type="Sprite" parent="." index="90"]
+
+position = Vector2( 416, 192 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 304, 224, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="gateB02" type="Sprite" parent="." index="91"]
+
+position = Vector2( 448, 192 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 192, 256, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Door00" type="Sprite" parent="." index="92"]
 
 position = Vector2( 208, 128 )
 texture = ExtResource( 3 )
@@ -1993,7 +2084,7 @@ region_enabled = true
 region_rect = Rect2( 80, 208, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Tile77" type="Sprite" parent="." index="82"]
+[node name="Tile77" type="Sprite" parent="." index="93"]
 
 position = Vector2( 32, 16 )
 texture = ExtResource( 3 )
@@ -2001,7 +2092,7 @@ region_enabled = true
 region_rect = Rect2( 192, 16, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Tile78" type="Sprite" parent="." index="83"]
+[node name="Tile78" type="Sprite" parent="." index="94"]
 
 position = Vector2( 0, 16 )
 texture = ExtResource( 3 )
@@ -2009,7 +2100,7 @@ region_enabled = true
 region_rect = Rect2( 208, 16, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Tile79" type="Sprite" parent="." index="84"]
+[node name="Tile79" type="Sprite" parent="." index="95"]
 
 position = Vector2( 64, 16 )
 texture = ExtResource( 3 )
@@ -2017,7 +2108,7 @@ region_enabled = true
 region_rect = Rect2( 224, 16, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Key" type="Sprite" parent="." index="85"]
+[node name="Key" type="Sprite" parent="." index="96"]
 
 position = Vector2( -32, 32 )
 texture = ExtResource( 1 )
@@ -2025,7 +2116,7 @@ region_enabled = true
 region_rect = Rect2( 80, 80, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Key2" type="Sprite" parent="." index="86"]
+[node name="Key2" type="Sprite" parent="." index="97"]
 
 position = Vector2( -32, 48 )
 texture = ExtResource( 1 )
@@ -2033,7 +2124,7 @@ region_enabled = true
 region_rect = Rect2( 112, 80, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Key3" type="Sprite" parent="." index="87"]
+[node name="Key3" type="Sprite" parent="." index="98"]
 
 position = Vector2( -32, 64 )
 texture = ExtResource( 1 )
@@ -2041,7 +2132,7 @@ region_enabled = true
 region_rect = Rect2( 96, 80, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Key4" type="Sprite" parent="." index="88"]
+[node name="Key4" type="Sprite" parent="." index="99"]
 
 position = Vector2( -32, 80 )
 texture = ExtResource( 1 )
@@ -2049,7 +2140,7 @@ region_enabled = true
 region_rect = Rect2( 64, 80, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Tile80" type="Sprite" parent="." index="89"]
+[node name="Tile80" type="Sprite" parent="." index="100"]
 
 position = Vector2( 96, 16 )
 texture = ExtResource( 3 )
@@ -2057,7 +2148,7 @@ region_enabled = true
 region_rect = Rect2( 240, 16, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door01" type="Sprite" parent="." index="90"]
+[node name="Door01" type="Sprite" parent="." index="101"]
 
 position = Vector2( 240, 128 )
 texture = ExtResource( 3 )
@@ -2065,7 +2156,7 @@ region_enabled = true
 region_rect = Rect2( 96, 208, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door02" type="Sprite" parent="." index="91"]
+[node name="Door02" type="Sprite" parent="." index="102"]
 
 position = Vector2( 272, 128 )
 texture = ExtResource( 3 )
@@ -2073,7 +2164,7 @@ region_enabled = true
 region_rect = Rect2( 80, 224, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door03" type="Sprite" parent="." index="92"]
+[node name="Door03" type="Sprite" parent="." index="103"]
 
 position = Vector2( 304, 128 )
 texture = ExtResource( 3 )
@@ -2081,7 +2172,7 @@ region_enabled = true
 region_rect = Rect2( 96, 224, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="NewLadder" type="Sprite" parent="." index="93"]
+[node name="NewLadder" type="Sprite" parent="." index="104"]
 
 position = Vector2( 352, 128 )
 texture = ExtResource( 2 )
@@ -2089,7 +2180,7 @@ region_enabled = true
 region_rect = Rect2( 16, 176, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door04" type="Sprite" parent="." index="94"]
+[node name="Door04" type="Sprite" parent="." index="105"]
 
 position = Vector2( 112, 148 )
 texture = ExtResource( 3 )
@@ -2097,7 +2188,7 @@ region_enabled = true
 region_rect = Rect2( 64, 224, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door05" type="Sprite" parent="." index="95"]
+[node name="Door05" type="Sprite" parent="." index="106"]
 
 position = Vector2( 144, 148 )
 texture = ExtResource( 3 )
@@ -2105,7 +2196,7 @@ region_enabled = true
 region_rect = Rect2( 80, 192, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door06" type="Sprite" parent="." index="96"]
+[node name="Door06" type="Sprite" parent="." index="107"]
 
 position = Vector2( 176, 148 )
 texture = ExtResource( 3 )
@@ -2113,7 +2204,7 @@ region_enabled = true
 region_rect = Rect2( 112, 208, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door07" type="Sprite" parent="." index="97"]
+[node name="Door07" type="Sprite" parent="." index="108"]
 
 position = Vector2( 208, 148 )
 texture = ExtResource( 3 )
@@ -2121,7 +2212,7 @@ region_enabled = true
 region_rect = Rect2( 96, 240, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door08" type="Sprite" parent="." index="98"]
+[node name="Door08" type="Sprite" parent="." index="109"]
 
 position = Vector2( 336, 148 )
 texture = ExtResource( 3 )
@@ -2129,7 +2220,7 @@ region_enabled = true
 region_rect = Rect2( 64, 192, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door09" type="Sprite" parent="." index="99"]
+[node name="Door09" type="Sprite" parent="." index="110"]
 
 position = Vector2( 240, 148 )
 texture = ExtResource( 3 )
@@ -2137,7 +2228,7 @@ region_enabled = true
 region_rect = Rect2( 112, 192, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door10" type="Sprite" parent="." index="100"]
+[node name="Door10" type="Sprite" parent="." index="111"]
 
 position = Vector2( 272, 148 )
 texture = ExtResource( 3 )
@@ -2145,7 +2236,7 @@ region_enabled = true
 region_rect = Rect2( 64, 240, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Door11" type="Sprite" parent="." index="101"]
+[node name="Door11" type="Sprite" parent="." index="112"]
 
 position = Vector2( 304, 148 )
 texture = ExtResource( 3 )
@@ -2153,7 +2244,7 @@ region_enabled = true
 region_rect = Rect2( 112, 240, 16, 16 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Tile73" type="Sprite" parent="." index="102"]
+[node name="Tile73" type="Sprite" parent="." index="113"]
 
 editor/display_folded = true
 position = Vector2( 320, 80 )
@@ -2178,7 +2269,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile74" type="Sprite" parent="." index="103"]
+[node name="Tile74" type="Sprite" parent="." index="114"]
 
 editor/display_folded = true
 position = Vector2( 320, 96 )
@@ -2203,7 +2294,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile75" type="Sprite" parent="." index="104"]
+[node name="Tile75" type="Sprite" parent="." index="115"]
 
 editor/display_folded = true
 position = Vector2( 320, 112 )
@@ -2228,7 +2319,7 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
-[node name="Tile76" type="Sprite" parent="." index="105"]
+[node name="Tile76" type="Sprite" parent="." index="116"]
 
 editor/display_folded = true
 position = Vector2( 320, 64 )
